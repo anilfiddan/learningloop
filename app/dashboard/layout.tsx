@@ -1,0 +1,26 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { DashboardShell } from "@/components/dashboard/dashboard-shell";
+
+export default function DashboardLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="w-8 h-8 border-2 border-gray-900 border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+
+  return <DashboardShell>{children}</DashboardShell>;
+}

@@ -1,0 +1,32 @@
+import { createBrowserClient } from '@supabase/ssr';
+
+// Check if Supabase is configured
+export function isSupabaseConfigured() {
+  return !!(process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
+}
+
+export function createClient() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  
+  if (!url || !key) {
+    console.warn('Supabase not configured. Using localStorage fallback.');
+    return null;
+  }
+  
+  return createBrowserClient(url, key);
+}
+
+// Singleton instance for client-side
+let supabaseInstance: ReturnType<typeof createBrowserClient> | null = null;
+
+export function getSupabase() {
+  if (!isSupabaseConfigured()) {
+    return null;
+  }
+  
+  if (!supabaseInstance) {
+    supabaseInstance = createClient();
+  }
+  return supabaseInstance;
+}

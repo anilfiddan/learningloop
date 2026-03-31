@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#34d399"/>
+      <stop offset="100%" style="stop-color:#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.9"/>
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.7"/>
+    </linearGradient>
+  </defs>
+  <!-- Background rounded square -->
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <!-- Sound wave bars (speech symbol) -->
+  <g transform="translate(256, 256)">
+    <!-- Center mic circle -->
+    <circle cx="0" cy="0" r="48" fill="white" opacity="0.95"/>
+    <circle cx="0" cy="-10" r="20" fill="none" stroke="#10b981" stroke-width="5" stroke-linecap="round"/>
+    <line x1="0" y1="10" x2="0" y2="28" stroke="#10b981" stroke-width="5" stroke-linecap="round"/>
+    <path d="M-14 16 Q-14 28 0 28 Q14 28 14 16" fill="none" stroke="#10b981" stroke-width="4" stroke-linecap="round"/>
+    <!-- Sound waves left -->
+    <path d="M-80 -60 Q-100 0 -80 60" fill="none" stroke="white" stroke-width="10" stroke-linecap="round" opacity="0.6"/>
+    <path d="M-110 -90 Q-140 0 -110 90" fill="none" stroke="white" stroke-width="10" stroke-linecap="round" opacity="0.4"/>
+    <path d="M-140 -115 Q-178 0 -140 115" fill="none" stroke="white" stroke-width="10" stroke-linecap="round" opacity="0.25"/>
+    <!-- Sound waves right -->
+    <path d="M80 -60 Q100 0 80 60" fill="none" stroke="white" stroke-width="10" stroke-linecap="round" opacity="0.6"/>
+    <path d="M110 -90 Q140 0 110 90" fill="none" stroke="white" stroke-width="10" stroke-linecap="round" opacity="0.4"/>
+    <path d="M140 -115 Q178 0 140 115" fill="none" stroke="white" stroke-width="10" stroke-linecap="round" opacity="0.25"/>
+    <!-- Loop arrow at bottom -->
+    <path d="M-35 80 Q0 110 35 80" fill="none" stroke="white" stroke-width="7" stroke-linecap="round" opacity="0.7"/>
+    <polygon points="30,72 42,82 32,90" fill="white" opacity="0.7"/>
+  </g>
+</svg>
