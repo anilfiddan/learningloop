@@ -10,26 +10,26 @@ export function HowItWorks() {
     {
       icon: Search,
       number: "01",
-      title: lang === "tr" ? "Kelime Secin" : "Choose a Word",
-      desc: lang === "tr" ? "Pratik yapmak istediginiz kelimeyi yazin veya hazir listelerden secin. AI, hecelere ayirir ve ogrenim stratejisi olusturur." : "Type the word you want to practice or choose from ready lists. AI breaks it into syllables and creates a learning strategy.",
+      title: lang === "tr" ? "Kelime Seçin" : "Choose a Word",
+      desc: lang === "tr" ? "Pratik yapmak istediğiniz kelimeyi yazın veya hazır listelerden seçin. AI, hecelere ayırır ve öğrenim stratejisi oluşturur." : "Type the word you want to practice or choose from ready lists. AI breaks it into syllables and creates a learning strategy.",
     },
     {
       icon: Headphones,
       number: "02",
       title: lang === "tr" ? "Dinleyin ve Analiz Edin" : "Listen & Analyze",
-      desc: lang === "tr" ? "Dogru telaffuzu yavas ve normal hizda dinleyin. Her hece icin agiz pozisyonu ve nefes rehberligi alin." : "Listen to correct pronunciation at slow and normal speed. Get mouth position and breathing guidance for each syllable.",
+      desc: lang === "tr" ? "Doğru telaffuzu yavaş ve normal hızda dinleyin. Her hece için ağız pozisyonu ve nefes rehberliği alın." : "Listen to correct pronunciation at slow and normal speed. Get mouth position and breathing guidance for each syllable.",
     },
     {
       icon: Mic,
       number: "03",
-      title: lang === "tr" ? "Soyleyin ve Geri Bildirim Alin" : "Speak & Get Feedback",
-      desc: lang === "tr" ? "Sesinizi kaydedin, NLP motoru telaffuzunuzu analiz etsin. Hangi hecelerde zorlandiginizi gorun ve kisisel ipuclari alin." : "Record your voice and let the NLP engine analyze your pronunciation. See which syllables need work and get personalized tips.",
+      title: lang === "tr" ? "Söyleyin ve Geri Bildirim Alın" : "Speak & Get Feedback",
+      desc: lang === "tr" ? "Sesinizi kaydedin, NLP motoru telaffuzunuzu analiz etsin. Hangi hecelerde zorlandığınızı görün ve kişisel ipuçları alın." : "Record your voice and let the NLP engine analyze your pronunciation. See which syllables need work and get personalized tips.",
     },
     {
       icon: BarChart3,
       number: "04",
-      title: lang === "tr" ? "Ilerlemenizi Takip Edin" : "Track Your Progress",
-      desc: lang === "tr" ? "Zaman icindeki gelisiminizi gorun. Duzeli pratik onerileriyle her gun biraz daha ilerleyin." : "See your improvement over time. Progress a little more each day with structured practice suggestions.",
+      title: lang === "tr" ? "İlerlemenizi Takip Edin" : "Track Your Progress",
+      desc: lang === "tr" ? "Zaman içindeki gelişiminizi görün. Düzenli pratik önerileriyle her gün biraz daha ilerleyin." : "See your improvement over time. Progress a little more each day with structured practice suggestions.",
     },
   ];
 
@@ -38,10 +38,10 @@ export function HowItWorks() {
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            {lang === "tr" ? "Nasil Calisir?" : "How Does It Work?"}
+            {lang === "tr" ? "Nasıl Çalışır?" : "How Does It Work?"}
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto">
-            {lang === "tr" ? "4 adimda kisisellestirilmis telaffuz pratigine baslayin" : "Start personalized pronunciation practice in 4 steps"}
+            {lang === "tr" ? "4 adımda kişiselleştirilmiş telaffuz pratiğine başlayın" : "Start personalized pronunciation practice in 4 steps"}
           </p>
         </div>
 

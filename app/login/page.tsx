@@ -31,7 +31,7 @@ function LoginForm() {
       const data = await res.json();
 
       if (!res.ok) {
-        throw new Error(data.error || 'Giris basarisiz');
+        throw new Error(data.error || 'Giriş başarısız');
       }
 
       localStorage.setItem("ll_auth", JSON.stringify({
@@ -42,7 +42,7 @@ function LoginForm() {
 
       router.push(redirect);
     } catch (err: unknown) {
-      const message = err instanceof Error ? err.message : "Giris yapilamadi. Lutfen bilgilerinizi kontrol edin.";
+      const message = err instanceof Error ? err.message : "Giriş yapılamadı. Lütfen bilgilerinizi kontrol edin.";
       setError(message);
       setLoading(false);
     }
@@ -61,10 +61,10 @@ function LoginForm() {
           </div>
 
           <h2 className="text-xl font-bold text-gray-900 text-center mb-1">
-            Giris Yap
+            Giriş Yap
           </h2>
           <p className="text-gray-400 text-center text-sm mb-6">
-            Hesabiniza giris yapin
+            Hesabınıza giriş yapın
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -90,7 +90,7 @@ function LoginForm() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5">Sifre</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">Şifre</label>
               <div className="relative">
                 <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                 <input
@@ -117,22 +117,22 @@ function LoginForm() {
               disabled={loading}
               className="w-full py-2.5 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-all flex items-center justify-center gap-2 text-sm disabled:opacity-50"
             >
-              {loading ? "Giris yapiliyor..." : "Giris Yap"}
+              {loading ? "Giriş yapılıyor..." : "Giriş Yap"}
               {!loading && <ArrowRight className="w-4 h-4" />}
             </button>
           </form>
 
           <p className="text-center text-sm text-gray-400 mt-6">
-            Hesabiniz yok mu?{" "}
+            Hesabınız yok mu?{" "}
             <Link href="/register" className="text-gray-900 font-medium hover:underline">
-              Kayit Ol
+              Kayıt Ol
             </Link>
           </p>
         </div>
 
         <p className="text-center text-xs text-gray-400 mt-4">
           <Link href="/" className="hover:text-gray-600 transition-colors">
-            Ana Sayfaya Don
+            Ana Sayfaya Dön
           </Link>
         </p>
       </div>

@@ -67,13 +67,13 @@ export function Navbar({ onLogin, onGetStarted }: NavbarProps) {
               onClick={onLogin}
               className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 rounded-lg transition-all"
             >
-              {lang === "tr" ? "Giris Yap" : "Login"}
+              {lang === "tr" ? "Giriş Yap" : "Login"}
             </button>
             <button
               onClick={onGetStarted}
               className="px-5 py-2.5 text-sm font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-all flex items-center gap-2"
             >
-              {lang === "tr" ? "Basla" : "Start"}
+              {lang === "tr" ? "Başla" : "Start"}
             </button>
           </div>
         </div>

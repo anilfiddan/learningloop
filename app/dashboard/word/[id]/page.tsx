@@ -143,7 +143,7 @@ export default function WordDetailPage() {
   if (!word) {
     return (
       <div className="p-6 flex items-center justify-center min-h-[400px]">
-        <p className="text-gray-500">Kelime bulunamadi</p>
+        <p className="text-gray-500">Kelime bulunamadı</p>
       </div>
     );
   }
@@ -165,7 +165,7 @@ export default function WordDetailPage() {
               {word.lang === "tr" ? "TR" : "EN"}
             </span>
             <span className="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded font-medium">
-              {word.level === "beginner" ? "Baslangic" : "Orta"}
+              {word.level === "beginner" ? "Başlangıç" : "Orta"}
             </span>
           </div>
           {word.definition && (
@@ -205,7 +205,7 @@ export default function WordDetailPage() {
           )}
         >
           <AlertTriangle className="w-4 h-4" />
-          {word.isHard ? "Zor" : "Zor Isaretle"}
+          {word.isHard ? "Zor" : "Zor İşaretle"}
         </button>
         <button
           onClick={toggleLearned}
@@ -217,7 +217,7 @@ export default function WordDetailPage() {
           )}
         >
           <CheckCircle className="w-4 h-4" />
-          {word.isLearned ? "Ogrendim" : "Ogrendim Isaretle"}
+          {word.isLearned ? "Öğrendim" : "Öğrendim İşaretle"}
         </button>
       </div>
 
@@ -237,7 +237,7 @@ export default function WordDetailPage() {
                   : "bg-gray-900 text-white hover:bg-gray-800"
               )}
             >
-              Kelimeyi Cal
+              Kelimeyi Çal
             </button>
           </div>
 
@@ -267,7 +267,7 @@ export default function WordDetailPage() {
         <div className="bg-white rounded-xl border border-gray-100 p-6">
           <div className="flex items-center justify-between mb-4">
             <h3 className="font-bold text-gray-900">
-              Gorsel
+              Görsel
             </h3>
             <button
               onClick={generateMedia}
@@ -279,7 +279,7 @@ export default function WordDetailPage() {
               ) : (
                 <RefreshCw className="w-4 h-4" />
               )}
-              Olustur
+              Oluştur
             </button>
           </div>
 
@@ -292,7 +292,7 @@ export default function WordDetailPage() {
           ) : (
             <div className="w-full h-48 bg-gray-50 rounded-lg flex flex-col items-center justify-center">
               <ImageIcon className="w-10 h-10 text-gray-300 mb-2" />
-              <p className="text-sm text-gray-400">Gorsel olusturmak icin tikla</p>
+              <p className="text-sm text-gray-400">Görsel oluşturmak için tıkla</p>
             </div>
           )}
         </div>
@@ -309,15 +309,15 @@ export default function WordDetailPage() {
         <div className="bg-white rounded-xl border border-gray-100 p-6">
           <div className="flex items-center justify-between mb-4">
             <h3 className="font-bold text-gray-900">
-              Pratik Gecmisi
+              Pratik Geçmişi
             </h3>
           </div>
 
           {attempts.length === 0 ? (
             <div className="text-center py-8">
               <History className="w-8 h-8 text-gray-300 mx-auto mb-2" />
-              <p className="text-sm text-gray-500">Henuz pratik yok</p>
-              <p className="text-xs text-gray-400 mt-1">Pratik Kocu ile basla</p>
+              <p className="text-sm text-gray-500">Henüz pratik yok</p>
+              <p className="text-xs text-gray-400 mt-1">Pratik Koçu ile başla</p>
             </div>
           ) : (
             <div className="space-y-3 max-h-64 overflow-y-auto">
@@ -349,7 +349,7 @@ export default function WordDetailPage() {
                     "bg-gray-100 text-gray-600"
                   )}>
                     {attempt.verdict === "great" ? "Harika" :
-                     attempt.verdict === "close" ? "Yakin" : "Tekrar"}
+                     attempt.verdict === "close" ? "Yakın" : "Tekrar"}
                   </span>
                 </div>
               ))}
@@ -365,7 +365,7 @@ export default function WordDetailPage() {
 
           <div className="space-y-3">
             <div className="flex justify-between py-3 px-4 bg-gray-50 rounded-lg">
-              <span className="text-gray-500 font-medium">Olusturulma</span>
+              <span className="text-gray-500 font-medium">Oluşturulma</span>
               <span className="text-gray-800 font-semibold">{new Date(word.createdAt).toLocaleDateString()}</span>
             </div>
             {word.lastPracticedAt && (
@@ -384,7 +384,7 @@ export default function WordDetailPage() {
                 "px-2.5 py-1 rounded text-xs font-medium",
                 word.isLearned ? "bg-emerald-50 text-emerald-700" : "bg-gray-100 text-gray-600"
               )}>
-                {word.isLearned ? "Ogrendim" : "Ogreniyorum"}
+                {word.isLearned ? "Öğrendim" : "Öğreniyorum"}
               </span>
             </div>
           </div>

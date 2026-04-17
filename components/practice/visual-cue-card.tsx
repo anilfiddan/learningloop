@@ -123,7 +123,7 @@ export function VisualCueCard({
             </span>
           </div>
           <p className="mt-3 text-base font-bold text-gray-800">{word}</p>
-          <p className="text-xs text-gray-400 mt-1">Gorsel olusturmak icin yenile</p>
+          <p className="text-xs text-gray-400 mt-1">Görsel oluşturmak için yenile</p>
         </div>
       ) : (
         <div className="relative overflow-hidden rounded-xl border border-gray-100">

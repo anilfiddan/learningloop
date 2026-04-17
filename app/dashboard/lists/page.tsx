@@ -74,7 +74,7 @@ export default function ListsPage() {
       <div className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold text-gray-800 mb-1">Listeler</h1>
-          <p className="text-gray-500">Kelimelerini koleksiyonlara ayir ve duzenle</p>
+          <p className="text-gray-500">Kelimelerini koleksiyonlara ayır ve düzenle</p>
         </div>
         <button
           onClick={() => setIsAddModalOpen(true)}
@@ -89,13 +89,13 @@ export default function ListsPage() {
       {lists.length === 0 ? (
         <div className="bg-gray-50 rounded-xl border border-gray-100 p-16 text-center">
           <FolderOpen className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-          <h3 className="text-lg font-bold text-gray-800 mb-2">Henuz liste yok</h3>
-          <p className="text-gray-500 mb-6">Ilk listeni olustur ve kelimelerini duzenle</p>
+          <h3 className="text-lg font-bold text-gray-800 mb-2">Henüz liste yok</h3>
+          <p className="text-gray-500 mb-6">İlk listeni oluştur ve kelimelerini düzenle</p>
           <button
             onClick={() => setIsAddModalOpen(true)}
             className="px-6 py-3 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-all"
           >
-            Liste Olustur
+            Liste Oluştur
           </button>
         </div>
       ) : (
@@ -171,7 +171,7 @@ export default function ListsPage() {
                     onClick={() => openList(list.id)}
                     className="w-full flex items-center justify-center gap-2 py-3 border border-gray-200 text-gray-600 rounded-lg text-sm font-semibold hover:bg-gray-50 transition-colors"
                   >
-                    Listeyi Ac
+                    Listeyi Aç
                     <ChevronRight className="w-4 h-4" />
                   </button>
                 </div>
@@ -193,13 +193,13 @@ export default function ListsPage() {
             </button>
 
             <div className="mb-6">
-              <h2 className="text-xl font-bold text-gray-800">Yeni Liste Olustur</h2>
-              <p className="text-sm text-gray-500 mt-1">Kelimelerini gruplamak icin bir liste olustur</p>
+              <h2 className="text-xl font-bold text-gray-800">Yeni Liste Oluştur</h2>
+              <p className="text-sm text-gray-500 mt-1">Kelimelerini gruplamak için bir liste oluştur</p>
             </div>
 
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-semibold text-gray-600 mb-2">Ikon Sec</label>
+                <label className="block text-sm font-semibold text-gray-600 mb-2">İkon Seç</label>
                 <div className="flex flex-wrap gap-2">
                   {emojis.map((emoji) => (
                     <button
@@ -219,22 +219,22 @@ export default function ListsPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-gray-600 mb-2">Liste Adi</label>
+                <label className="block text-sm font-semibold text-gray-600 mb-2">Liste Adı</label>
                 <input
                   type="text"
                   value={newList.name}
                   onChange={(e) => setNewList({ ...newList, name: e.target.value })}
-                  placeholder="orn: Doga, Yiyecekler, Seyahat"
+                  placeholder="örn: Doğa, Yiyecekler, Seyahat"
                   className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-gray-400"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-gray-600 mb-2">Aciklama (istege bagli)</label>
+                <label className="block text-sm font-semibold text-gray-600 mb-2">Açıklama (isteğe bağlı)</label>
                 <textarea
                   value={newList.description}
                   onChange={(e) => setNewList({ ...newList, description: e.target.value })}
-                  placeholder="Bu liste ne hakkinda?"
+                  placeholder="Bu liste ne hakkında?"
                   rows={2}
                   className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-gray-400 resize-none"
                 />
@@ -245,7 +245,7 @@ export default function ListsPage() {
                 disabled={!newList.name.trim()}
                 className="w-full py-4 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Liste Olustur
+                Liste Oluştur
               </button>
             </div>
           </div>

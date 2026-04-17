@@ -30,8 +30,8 @@ const VERDICT_CONFIG: Record<Verdict, { label: string; labelTr: string; color: s
     bg: "bg-emerald-50 border border-emerald-200",
   },
   close: {
-    label: "Yakin",
-    labelTr: "Yakin",
+    label: "Yakın",
+    labelTr: "Yakın",
     color: "text-amber-700",
     bg: "bg-amber-50 border border-amber-200",
   },
@@ -85,7 +85,7 @@ export function PracticeCoachCard({ wordItem, onAttemptSaved, compact = false }:
       console.error("Microphone access error:", error);
       setState((prev) => ({
         ...prev,
-        error: isTurkish ? "Mikrofon erisimi reddedildi" : "Microphone access denied"
+        error: isTurkish ? "Mikrofon erişimi reddedildi" : "Microphone access denied"
       }));
     }
   }, [isTurkish]);
@@ -199,7 +199,7 @@ export function PracticeCoachCard({ wordItem, onAttemptSaved, compact = false }:
         evaluation: {
           verdict: "close",
           syllableChecks: wordItem.syllables.map(s => ({ syllable: s, ok: true, hint: "" })),
-          coachTip: isTurkish ? "Iyi gidiyorsun! Tekrar dene." : "Good effort! Try again.",
+          coachTip: isTurkish ? "İyi gidiyorsun! Tekrar dene." : "Good effort! Try again.",
         },
       });
     }
@@ -258,7 +258,7 @@ export function PracticeCoachCard({ wordItem, onAttemptSaved, compact = false }:
         compact ? "p-4" : "p-6 sm:p-8"
       )}
       role="region"
-      aria-label={isTurkish ? "Pratik Kocu - Ses kaydi ve degerlendirme" : "Practice Coach - Recording and evaluation"}
+      aria-label={isTurkish ? "Pratik Koçu - Ses kaydı ve değerlendirme" : "Practice Coach - Recording and evaluation"}
     >
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
@@ -266,7 +266,7 @@ export function PracticeCoachCard({ wordItem, onAttemptSaved, compact = false }:
           "font-bold text-gray-800 flex items-center gap-2",
           compact ? "text-base" : "text-lg"
         )}>
-          {isTurkish ? "Pratik Kocu" : "Practice Coach"}
+          {isTurkish ? "Pratik Koçu" : "Practice Coach"}
         </h3>
         <button
           onClick={playTTS}
@@ -286,7 +286,7 @@ export function PracticeCoachCard({ wordItem, onAttemptSaved, compact = false }:
         <div className="flex flex-col items-center py-8">
           <button
             onClick={startRecording}
-            aria-label={isTurkish ? "Ses kaydi baslat" : "Start recording"}
+            aria-label={isTurkish ? "Ses kaydı başlat" : "Start recording"}
             className={cn(
               "w-28 h-28 sm:w-32 sm:h-32 rounded-full",
               "bg-gray-900 text-white",
@@ -301,10 +301,10 @@ export function PracticeCoachCard({ wordItem, onAttemptSaved, compact = false }:
             <Mic className="h-12 w-12 sm:h-14 sm:w-14" aria-hidden="true" />
           </button>
           <p className="mt-6 text-lg text-gray-600 text-center font-medium">
-            {isTurkish ? "Kaydetmek icin butona bas" : "Tap to record"}
+            {isTurkish ? "Kaydetmek için butona bas" : "Tap to record"}
           </p>
           <p className="mt-2 text-sm text-gray-400 text-center">
-            {isTurkish ? "Kelimeyi net bir sekilde soyle" : "Speak the word clearly"}
+            {isTurkish ? "Kelimeyi net bir şekilde söyle" : "Speak the word clearly"}
           </p>
         </div>
       )}
@@ -314,7 +314,7 @@ export function PracticeCoachCard({ wordItem, onAttemptSaved, compact = false }:
         <div className="flex flex-col items-center py-8" role="status" aria-live="polite">
           <button
             onClick={stopRecording}
-            aria-label={isTurkish ? "Kaydi durdur" : "Stop recording"}
+            aria-label={isTurkish ? "Kaydı durdur" : "Stop recording"}
             className={cn(
               "w-28 h-28 sm:w-32 sm:h-32 rounded-full",
               "bg-gray-900 text-white",
@@ -328,10 +328,10 @@ export function PracticeCoachCard({ wordItem, onAttemptSaved, compact = false }:
             <Square className="h-12 w-12 sm:h-14 sm:w-14" aria-hidden="true" />
           </button>
           <p className="mt-6 text-lg text-gray-700 font-semibold animate-pulse">
-            {isTurkish ? "Kayit yapiliyor..." : "Recording..."}
+            {isTurkish ? "Kayıt yapılıyor..." : "Recording..."}
           </p>
           <p className="mt-2 text-sm text-gray-500">
-            {isTurkish ? "Bitirmek icin butona bas" : "Tap to stop"}
+            {isTurkish ? "Bitirmek için butona bas" : "Tap to stop"}
           </p>
         </div>
       )}
@@ -341,10 +341,10 @@ export function PracticeCoachCard({ wordItem, onAttemptSaved, compact = false }:
         <div className="flex flex-col items-center py-10" role="status" aria-live="polite" aria-busy="true">
           <Loader2 className="h-16 w-16 text-gray-700 animate-spin" aria-hidden="true" />
           <p className="mt-6 text-lg text-gray-600 font-medium">
-            {isTurkish ? "Degerlendiriliyor..." : "Evaluating..."}
+            {isTurkish ? "Değerlendiriliyor..." : "Evaluating..."}
           </p>
           <p className="mt-2 text-sm text-gray-400">
-            {isTurkish ? "Lutfen bekle" : "Please wait"}
+            {isTurkish ? "Lütfen bekle" : "Please wait"}
           </p>
         </div>
       )}
@@ -353,12 +353,12 @@ export function PracticeCoachCard({ wordItem, onAttemptSaved, compact = false }:
       {state.step === "idle" && state.audioBlob && !state.evaluation && (
         <div className="flex flex-col items-center gap-6 py-6">
           <p className="text-base text-gray-600 font-medium">
-            {isTurkish ? "Kayit tamamlandi" : "Recording complete"}
+            {isTurkish ? "Kayıt tamamlandı" : "Recording complete"}
           </p>
           <div className="flex items-center gap-4">
             <button
               onClick={playRecording}
-              aria-label={isTurkish ? "Kaydi dinle" : "Play recording"}
+              aria-label={isTurkish ? "Kaydı dinle" : "Play recording"}
               className={cn(
                 "p-4 rounded-lg bg-gray-100 text-gray-700",
                 "hover:bg-gray-200",
@@ -370,7 +370,7 @@ export function PracticeCoachCard({ wordItem, onAttemptSaved, compact = false }:
             </button>
             <button
               onClick={processRecording}
-              aria-label={isTurkish ? "Degerlendir" : "Evaluate"}
+              aria-label={isTurkish ? "Değerlendir" : "Evaluate"}
               className={cn(
                 "px-8 py-4 text-lg font-semibold",
                 "bg-gray-900 text-white rounded-lg",
@@ -380,7 +380,7 @@ export function PracticeCoachCard({ wordItem, onAttemptSaved, compact = false }:
                 "active:scale-95"
               )}
             >
-              {isTurkish ? "Degerlendir" : "Evaluate"}
+              {isTurkish ? "Değerlendir" : "Evaluate"}
             </button>
             <button
               onClick={reset}
@@ -406,7 +406,7 @@ export function PracticeCoachCard({ wordItem, onAttemptSaved, compact = false }:
             <div className="flex items-center gap-4">
               <div
                 className="text-4xl sm:text-5xl font-bold text-gray-800"
-                aria-label={`Skor: yuzde ${state.matchPct}`}
+                aria-label={`Skor: yüzde ${state.matchPct}`}
               >
                 {state.matchPct}%
               </div>
@@ -426,7 +426,7 @@ export function PracticeCoachCard({ wordItem, onAttemptSaved, compact = false }:
             {audioUrl && (
               <button
                 onClick={playRecording}
-                aria-label={isTurkish ? "Kaydi dinle" : "Play recording"}
+                aria-label={isTurkish ? "Kaydı dinle" : "Play recording"}
                 className={cn(
                   "p-3 rounded-lg text-gray-500",
                   "hover:text-gray-700 hover:bg-gray-200",
@@ -452,7 +452,7 @@ export function PracticeCoachCard({ wordItem, onAttemptSaved, compact = false }:
           {/* Syllable Checks - Larger and clearer */}
           <div>
             <p className="text-sm text-gray-500 mb-3 font-medium">
-              {isTurkish ? "Hece Kontrolu:" : "Syllable Check:"}
+              {isTurkish ? "Hece Kontrolü:" : "Syllable Check:"}
             </p>
             <div className="flex flex-wrap gap-3" role="list">
               {state.evaluation.syllableChecks.map((check, index) => (
@@ -466,7 +466,7 @@ export function PracticeCoachCard({ wordItem, onAttemptSaved, compact = false }:
                       : "bg-amber-50 text-amber-800 border border-amber-200"
                   )}
                   title={check.hint || undefined}
-                  aria-label={`${check.syllable}: ${check.ok ? (isTurkish ? "Dogru" : "Correct") : (isTurkish ? "Gelistirilmeli" : "Needs work")}`}
+                  aria-label={`${check.syllable}: ${check.ok ? (isTurkish ? "Doğru" : "Correct") : (isTurkish ? "Geliştirilmeli" : "Needs work")}`}
                 >
                   {check.ok ? (
                     <Check className="h-5 w-5" aria-hidden="true" />
@@ -483,7 +483,7 @@ export function PracticeCoachCard({ wordItem, onAttemptSaved, compact = false }:
           <div
             className="p-5 bg-gray-50 rounded-xl border border-gray-200"
             role="note"
-            aria-label={isTurkish ? "Koc tavsiyesi" : "Coach tip"}
+            aria-label={isTurkish ? "Koç tavsiyesi" : "Coach tip"}
           >
             <p className="text-base sm:text-lg text-gray-800 font-medium leading-relaxed">
               {state.evaluation.coachTip}

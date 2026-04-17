@@ -10,32 +10,32 @@ export function FeaturesSection() {
     {
       icon: AudioWaveform,
       title: lang === "tr" ? "Hece Analizi" : "Syllable Analysis",
-      description: lang === "tr" ? "Kelimeleri hecelere ayirir, her birinin dogru telaffuzunu gosterir" : "Breaks words into syllables, shows correct pronunciation for each",
+      description: lang === "tr" ? "Kelimeleri hecelere ayırır, her birinin doğru telaffuzunu gösterir" : "Breaks words into syllables, shows correct pronunciation for each",
     },
     {
       icon: BrainCircuit,
-      title: lang === "tr" ? "NLP Degerlendirme" : "NLP Evaluation",
-      description: lang === "tr" ? "Yapay zeka telaffuzunuzu analiz eder ve gelisim alanlarinizi belirler" : "AI analyzes your pronunciation and identifies areas for improvement",
+      title: lang === "tr" ? "NLP Değerlendirme" : "NLP Evaluation",
+      description: lang === "tr" ? "Yapay zeka telaffuzunuzu analiz eder ve gelişim alanlarınızı belirler" : "AI analyzes your pronunciation and identifies areas for improvement",
     },
     {
       icon: Eye,
-      title: lang === "tr" ? "Gorsel Ipuclari" : "Visual Cues",
-      description: lang === "tr" ? "AI tarafindan olusturulan gorseller ve videolarla kelimeleri somutlastirir" : "Makes words concrete with AI-generated images and videos",
+      title: lang === "tr" ? "Görsel İpuçları" : "Visual Cues",
+      description: lang === "tr" ? "AI tarafından oluşturulan görseller ve videolarla kelimeleri somutlaştırır" : "Makes words concrete with AI-generated images and videos",
     },
     {
       icon: Mic,
-      title: lang === "tr" ? "Ses Kaydi ve Karsilastirma" : "Voice Recording & Comparison",
-      description: lang === "tr" ? "Sesinizi kaydedin, dogru telaffuzla karsilastirin" : "Record your voice, compare with correct pronunciation",
+      title: lang === "tr" ? "Ses Kaydı ve Karşılaştırma" : "Voice Recording & Comparison",
+      description: lang === "tr" ? "Sesinizi kaydedin, doğru telaffuzla karşılaştırın" : "Record your voice, compare with correct pronunciation",
     },
     {
       icon: MessageSquare,
-      title: lang === "tr" ? "Kisisel Kocluk" : "Personal Coaching",
-      description: lang === "tr" ? "Agiz pozisyonu, nefes kontrolu ve vurgu rehberligi" : "Mouth position, breath control and stress guidance",
+      title: lang === "tr" ? "Kişisel Koçluk" : "Personal Coaching",
+      description: lang === "tr" ? "Ağız pozisyonu, nefes kontrolü ve vurgu rehberliği" : "Mouth position, breath control and stress guidance",
     },
     {
       icon: TrendingUp,
-      title: lang === "tr" ? "Ilerleme Takibi" : "Progress Tracking",
-      description: lang === "tr" ? "Zaman icindeki gelisiminizi detayli grafiklerle takip edin" : "Track your development over time with detailed charts",
+      title: lang === "tr" ? "İlerleme Takibi" : "Progress Tracking",
+      description: lang === "tr" ? "Zaman içindeki gelişiminizi detaylı grafiklerle takip edin" : "Track your development over time with detailed charts",
     },
   ];
 
@@ -44,10 +44,10 @@ export function FeaturesSection() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            {lang === "tr" ? "Ozellikler" : "Features"}
+            {lang === "tr" ? "Özellikler" : "Features"}
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto">
-            {lang === "tr" ? "Telaffuz gelisiminizi destekleyen yapay zeka ozellikleri" : "AI features that support your pronunciation development"}
+            {lang === "tr" ? "Telaffuz gelişiminizi destekleyen yapay zeka özellikleri" : "AI features that support your pronunciation development"}
           </p>
         </div>
 

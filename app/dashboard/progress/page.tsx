@@ -19,21 +19,21 @@ type Language = "tr" | "en";
 
 const translations = {
   tr: {
-    title: "Ilerleme Durumu",
-    subtitle: "Pratik yolculugunu takip et ve gelisimini gor",
+    title: "İlerleme Durumu",
+    subtitle: "Pratik yolculuğunu takip et ve gelişimini gör",
     thisWeek: "Bu Hafta",
-    wordsPracticed: "kelime calisildi",
+    wordsPracticed: "kelime çalışıldı",
     currentStreak: "Mevcut Seri",
     keepItUp: "devam et!",
     hardSyllables: "Zor Heceler",
-    markedForPractice: "pratik icin isaretli",
-    last7Days: "Son 7 Gun",
-    practiced: "kez calisildi",
+    markedForPractice: "pratik için işaretli",
+    last7Days: "Son 7 Gün",
+    practiced: "kez çalışıldı",
     practice: "Pratik",
-    noHardSyllables: "Isaretli zor hece yok",
-    markSyllables: "Pratik sirasinda heceleri zor olarak isaretle",
-    disclaimer: "Bu ilerleme verileri yalnizca pratik takibi icindir. Teshis bilgisi veya tibbi degerlendirme saglamaz. Konusma terapisi endiseler icin lutfen nitelikli bir dil ve konusma uzmanina danisin.",
-    days: ["Pzt", "Sal", "Car", "Per", "Cum", "Cmt", "Paz"],
+    noHardSyllables: "İşaretli zor hece yok",
+    markSyllables: "Pratik sırasında heceleri zor olarak işaretle",
+    disclaimer: "Bu ilerleme verileri yalnızca pratik takibi içindir. Teşhis bilgisi veya tıbbi değerlendirme sağlamaz. Konuşma terapisi endişeleri için lütfen nitelikli bir dil ve konuşma uzmanına danışın.",
+    days: ["Pzt", "Sal", "Çar", "Per", "Cum", "Cmt", "Paz"],
   },
   en: {
     title: "Your Progress",
@@ -194,7 +194,7 @@ export default function ProgressPage() {
               <Flame className="h-5 w-5 text-gray-600" />
             </div>
           </div>
-          <div className="text-4xl font-bold text-gray-900">{streak} {lang === "tr" ? "gun" : "days"}</div>
+          <div className="text-4xl font-bold text-gray-900">{streak} {lang === "tr" ? "gün" : "days"}</div>
           <p className="text-sm text-gray-500 mt-1 font-medium">{t.keepItUp}</p>
         </div>
 

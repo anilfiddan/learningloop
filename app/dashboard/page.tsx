@@ -31,10 +31,10 @@ function LoadingOverlay({ step, t }: { step: PipelineStep; t: ReturnType<typeof 
   useEffect(() => {
     setProgress(0);
     const items = [
-      { text: "Strateji olusturuluyor..." },
-      { text: "Sesler hazirlaniyor..." },
-      { text: "Gorseller yukleniyor..." },
-      { text: "Son dokunuslar..." },
+      { text: "Strateji oluşturuluyor..." },
+      { text: "Sesler hazırlanıyor..." },
+      { text: "Görseller yükleniyor..." },
+      { text: "Son dokunuşlar..." },
     ];
     setLoadingText(items[0].text);
     let index = 0;
@@ -394,7 +394,7 @@ export default function DashboardPracticePage() {
                 <div className="px-6 py-5 border-b border-gray-100">
                   <h2 className="text-lg font-semibold text-gray-800 flex items-center gap-2">
                     <Mic className="w-5 h-5 text-gray-400" />
-                    {t?.coach?.title || "Pratik Kocu"}
+                    {t?.coach?.title || "Pratik Koçu"}
                   </h2>
                 </div>
                 <div className="flex-1 p-6 flex flex-col items-center justify-center text-center">
@@ -402,10 +402,10 @@ export default function DashboardPracticePage() {
                     <Mic className="w-10 h-10 text-gray-400" />
                   </div>
                   <p className="text-gray-600 font-semibold text-lg mb-2">
-                    {t?.coach?.enterWordFirst || "Pratik yapmak icin yukaridan bir kelime girin"}
+                    {t?.coach?.enterWordFirst || "Pratik yapmak için yukarıdan bir kelime girin"}
                   </p>
                   <p className="text-gray-400 text-sm">
-                    Kelimeyi yazin ve Baslat butonuna basin.
+                    Kelimeyi yazın ve Başlat butonuna basın.
                   </p>
                 </div>
               </div>

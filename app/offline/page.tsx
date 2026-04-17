@@ -10,11 +10,11 @@ export default function OfflinePage() {
           <WifiOff className="w-8 h-8 text-gray-400" />
         </div>
         <h1 className="text-2xl font-bold text-gray-900 mb-2">
-          Baglanti Yok
+          Bağlantı Yok
         </h1>
         <p className="text-gray-500 text-sm mb-6 leading-relaxed">
-          Internet baglantiniz kesilmis gorunuyor. Telaffuz pratigi yapmak icin
-          internete bagli olmaniz gerekiyor.
+          İnternet bağlantınız kesilmiş görünüyor. Telaffuz pratiği yapmak için
+          internete bağlı olmanız gerekiyor.
         </p>
         <button
           onClick={() => window.location.reload()}

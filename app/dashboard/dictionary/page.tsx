@@ -128,8 +128,8 @@ export default function DictionaryPage() {
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900 mb-1">Sozlugum</h1>
-          <p className="text-gray-500">Ogrendigin tum kelimeler burada</p>
+          <h1 className="text-2xl font-bold text-gray-900 mb-1">Sözlüğüm</h1>
+          <p className="text-gray-500">Öğrendiğin tüm kelimeler burada</p>
         </div>
         <button
           onClick={() => setIsAddModalOpen(true)}
@@ -154,10 +154,10 @@ export default function DictionaryPage() {
         </div>
         <div className="flex gap-2">
           {([
-            { key: "all", label: "Tumu" },
+            { key: "all", label: "Tümü" },
             { key: "favorites", label: "Favoriler" },
             { key: "hard", label: "Zor" },
-            { key: "learned", label: "Ogrendim" },
+            { key: "learned", label: "Öğrendim" },
           ] as const).map((f) => (
             <button
               key={f.key}
@@ -180,8 +180,8 @@ export default function DictionaryPage() {
         {filteredWords.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-16">
             <BookOpen className="w-12 h-12 text-gray-300 mb-4" />
-            <p className="text-lg font-bold text-gray-700">Henuz kelime yok</p>
-            <p className="text-sm text-gray-400 mt-1">Ilk kelimeni ekleyerek basla</p>
+            <p className="text-lg font-bold text-gray-700">Henüz kelime yok</p>
+            <p className="text-sm text-gray-400 mt-1">İlk kelimeni ekleyerek başla</p>
           </div>
         ) : (
           <div className="divide-y divide-gray-100">
@@ -205,7 +205,7 @@ export default function DictionaryPage() {
                       </span>
                       {word.isLearned && (
                         <span className="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded-lg font-medium">
-                          Ogrendim
+                          Öğrendim
                         </span>
                       )}
                     </div>
@@ -273,7 +273,7 @@ export default function DictionaryPage() {
         </div>
         <div className="bg-gray-50 rounded-xl p-4 border border-gray-100">
           <p className="text-3xl font-bold text-gray-900">{words.filter(w => w.isLearned).length}</p>
-          <p className="text-sm text-gray-500 font-medium">Ogrendim</p>
+          <p className="text-sm text-gray-500 font-medium">Öğrendim</p>
         </div>
       </div>
 
@@ -299,10 +299,10 @@ export default function DictionaryPage() {
                   type="text"
                   value={newWord.text}
                   onChange={(e) => setNewWord({ ...newWord, text: e.target.value })}
-                  placeholder="orn: araba, kitap, gunes"
+                  placeholder="örn: araba, kitap, güneş"
                   className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-gray-400"
                 />
-                <p className="text-xs text-gray-400 mt-1">Heceler ve tanim otomatik olusturulacak</p>
+                <p className="text-xs text-gray-400 mt-1">Heceler ve tanım otomatik oluşturulacak</p>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
@@ -313,8 +313,8 @@ export default function DictionaryPage() {
                     onChange={(e) => setNewWord({ ...newWord, lang: e.target.value as "tr" | "en" })}
                     className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300"
                   >
-                    <option value="tr">Turkce</option>
-                    <option value="en">Ingilizce</option>
+                    <option value="tr">Türkçe</option>
+                    <option value="en">İngilizce</option>
                   </select>
                 </div>
                 <div>

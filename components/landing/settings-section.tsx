@@ -9,18 +9,18 @@ export function SettingsSection() {
   const controls = lang === "tr" ? [
     {
       icon: Globe,
-      title: "Dil secimi",
-      description: "Turkce ve Ingilizce dillerinde pratik yapin",
+      title: "Dil seçimi",
+      description: "Türkçe ve İngilizce dillerinde pratik yapın",
     },
     {
       icon: Gauge,
-      title: "Hiz kontrolu",
-      description: "Yavas veya normal hizda dinleyin, kendi temponuzda ilerleyin",
+      title: "Hız kontrolü",
+      description: "Yavaş veya normal hızda dinleyin, kendi temponuzda ilerleyin",
     },
     {
       icon: SlidersHorizontal,
-      title: "Kisisellestirilmis deneyim",
-      description: "Seviye, mod ve tercihlerinizi istediginiz gibi ayarlayin",
+      title: "Kişiselleştirilmiş deneyim",
+      description: "Seviye, mod ve tercihlerinizi istediğiniz gibi ayarlayın",
     },
   ] : [
     {
@@ -57,7 +57,7 @@ export function SettingsSection() {
                     {lang === "tr" ? "Ayarlar" : "Settings"}
                   </p>
                   <p className="text-xs text-gray-400">
-                    {lang === "tr" ? "Deneyiminizi ozellestirin" : "Customize your experience"}
+                    {lang === "tr" ? "Deneyiminizi özelleştirin" : "Customize your experience"}
                   </p>
                 </div>
               </div>
@@ -71,7 +71,7 @@ export function SettingsSection() {
                     </span>
                   </div>
                   <span className="px-3 py-1.5 text-sm font-medium text-white bg-gray-900 rounded-lg">
-                    {lang === "tr" ? "Turkce" : "English"}
+                    {lang === "tr" ? "Türkçe" : "English"}
                   </span>
                 </div>
 
@@ -79,12 +79,12 @@ export function SettingsSection() {
                   <div className="flex items-center gap-3">
                     <Gauge className="w-4 h-4 text-gray-500" />
                     <span className="text-sm font-medium text-gray-700">
-                      {lang === "tr" ? "Konusma Hizi" : "Speech Speed"}
+                      {lang === "tr" ? "Konuşma Hızı" : "Speech Speed"}
                     </span>
                   </div>
                   <div className="flex gap-2">
                     <span className="px-3 py-1.5 text-xs font-medium bg-white border border-gray-200 rounded-lg text-gray-500">
-                      {lang === "tr" ? "Yavas" : "Slow"}
+                      {lang === "tr" ? "Yavaş" : "Slow"}
                     </span>
                     <span className="px-3 py-1.5 text-xs font-medium text-white bg-gray-900 rounded-lg">
                       {lang === "tr" ? "Normal" : "Normal"}
@@ -101,7 +101,7 @@ export function SettingsSection() {
                   </div>
                   <div className="flex gap-2">
                     <span className="px-3 py-1.5 text-xs font-medium bg-white border border-gray-200 rounded-lg text-gray-500">
-                      {lang === "tr" ? "Baslangic" : "Beginner"}
+                      {lang === "tr" ? "Başlangıç" : "Beginner"}
                     </span>
                     <span className="px-3 py-1.5 text-xs font-medium text-white bg-gray-900 rounded-lg">
                       {lang === "tr" ? "Orta" : "Intermediate"}
@@ -115,11 +115,11 @@ export function SettingsSection() {
           {/* Right - Content */}
           <div className="order-1 lg:order-2">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              {lang === "tr" ? "Sizin Kontrolunuzde" : "You're in Control"}
+              {lang === "tr" ? "Sizin Kontrolünüzde" : "You're in Control"}
             </h2>
             <p className="text-gray-500 mb-8 leading-relaxed">
               {lang === "tr"
-                ? "Dil, hiz ve seviye ayarlarini kendinize gore duzenleyin. Herkesin ogrenim hizi farklidir — LearningLoop buna saygi duyar."
+                ? "Dil, hız ve seviye ayarlarını kendinize göre düzenleyin. Herkesin öğrenim hızı farklıdır — LearningLoop buna saygı duyar."
                 : "Adjust language, speed and level settings to your needs. Everyone learns at a different pace — LearningLoop respects that."
               }
             </p>

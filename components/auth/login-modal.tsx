@@ -39,14 +39,14 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
       const data = await res.json();
 
       if (!res.ok) {
-        throw new Error(data.error || 'Giris basarisiz');
+        throw new Error(data.error || 'Giriş başarısız');
       }
 
       login(email);
       onClose();
       window.location.href = "/dashboard";
     } catch (err: any) {
-      setError(err.message || "Giris yapilamadi");
+      setError(err.message || "Giriş yapılamadı");
       setLoading(false);
     }
   };
@@ -71,10 +71,10 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
         </button>
 
         <h2 className="text-xl font-bold text-gray-900 mb-1">
-          {lang === "tr" ? "Giris Yap" : "Login"}
+          {lang === "tr" ? "Giriş Yap" : "Login"}
         </h2>
         <p className="text-sm text-gray-400 mb-6">
-          {lang === "tr" ? "Hesabiniza giris yapin" : "Sign in to your account"}
+          {lang === "tr" ? "Hesabınıza giriş yapın" : "Sign in to your account"}
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -94,7 +94,7 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder={lang === "tr" ? "ornek@email.com" : "example@email.com"}
+                placeholder={lang === "tr" ? "örnek@email.com" : "example@email.com"}
                 className="w-full pl-10 pr-4 py-2.5 rounded-lg bg-gray-50 border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
                 required
               />
@@ -103,7 +103,7 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1.5">
-              {lang === "tr" ? "Sifre" : "Password"}
+              {lang === "tr" ? "Şifre" : "Password"}
             </label>
             <div className="relative">
               <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
@@ -132,7 +132,7 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
               disabled={loading}
               className="w-full py-2.5 rounded-lg font-medium text-white bg-gray-900 hover:bg-gray-800 transition-all flex items-center justify-center gap-2 disabled:opacity-50 text-sm"
             >
-              {loading ? (lang === "tr" ? "Giris yapiliyor..." : "Signing in...") : (lang === "tr" ? "Giris Yap" : "Login")}
+              {loading ? (lang === "tr" ? "Giriş yapılıyor..." : "Signing in...") : (lang === "tr" ? "Giriş Yap" : "Login")}
               {!loading && <ArrowRight className="w-4 h-4" />}
             </button>
             <button
@@ -140,15 +140,15 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
               onClick={onClose}
               className="w-full py-2.5 rounded-lg font-medium text-gray-600 bg-gray-50 border border-gray-200 hover:bg-gray-100 transition-colors text-sm"
             >
-              {lang === "tr" ? "Iptal" : "Cancel"}
+              {lang === "tr" ? "İptal" : "Cancel"}
             </button>
           </div>
         </form>
 
         <p className="mt-6 text-sm text-center text-gray-400">
-          {lang === "tr" ? "Hesabiniz yok mu?" : "Don't have an account?"}{" "}
+          {lang === "tr" ? "Hesabınız yok mu?" : "Don't have an account?"}{" "}
           <Link href="/register" onClick={onClose} className="text-gray-900 font-medium hover:underline">
-            {lang === "tr" ? "Kayit Ol" : "Sign Up"}
+            {lang === "tr" ? "Kayıt Ol" : "Sign Up"}
           </Link>
         </p>
       </div>

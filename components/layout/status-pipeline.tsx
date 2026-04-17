@@ -93,7 +93,7 @@ export function StatusPipeline({ currentStep }: StatusPipelineProps) {
           <p className="text-sm text-gray-500">
             <span className="inline-flex items-center gap-1.5">
               <Loader2 className="h-3.5 w-3.5 animate-spin text-gray-500" />
-              {activeStep.labelTr} olusturuluyor...
+              {activeStep.labelTr} oluşturuluyor...
             </span>
           </p>
         </div>
@@ -102,7 +102,7 @@ export function StatusPipeline({ currentStep }: StatusPipelineProps) {
       {currentStep === "ready" && (
         <div className="mt-3 text-center">
           <p className="text-sm text-gray-700 font-medium">
-            Hazır! Pratik yapmaya baslayabilirsin.
+            Hazır! Pratik yapmaya başlayabilirsin.
           </p>
         </div>
       )}

@@ -31,11 +31,11 @@ export default function RegisterPage() {
       try {
         data = await res.json();
       } catch {
-        throw new Error(`API hatasi: ${res.status} ${res.statusText}`);
+        throw new Error(`API hatası: ${res.status} ${res.statusText}`);
       }
 
       if (!res.ok) {
-        throw new Error(data.error || `Kayit basarisiz (${res.status})`);
+        throw new Error(data.error || `Kayıt başarısız (${res.status})`);
       }
 
       localStorage.setItem("ll_auth", JSON.stringify({
@@ -47,7 +47,7 @@ export default function RegisterPage() {
 
       router.push("/dashboard");
     } catch (err: unknown) {
-      const message = err instanceof Error ? err.message : 'Kayit islemi basarisiz';
+      const message = err instanceof Error ? err.message : 'Kayıt işlemi başarısız';
       setError(message);
       setLoading(false);
     }
@@ -65,8 +65,8 @@ export default function RegisterPage() {
         </div>
 
         <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-          <h2 className="text-xl font-bold text-gray-900 text-center mb-1">Hesap Olustur</h2>
-          <p className="text-gray-400 text-center text-sm mb-6">Telaffuz pratiginize baslayin</p>
+          <h2 className="text-xl font-bold text-gray-900 text-center mb-1">Hesap Oluştur</h2>
+          <p className="text-gray-400 text-center text-sm mb-6">Telaffuz pratiğinize başlayın</p>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             {error && (
@@ -76,14 +76,14 @@ export default function RegisterPage() {
             )}
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5">Isim</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">İsim</label>
               <div className="relative">
                 <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                 <input
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="Adiniz"
+                  placeholder="Adınız"
                   className="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all text-sm"
                   required
                 />
@@ -106,7 +106,7 @@ export default function RegisterPage() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5">Sifre</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">Şifre</label>
               <div className="relative">
                 <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                 <input
@@ -133,22 +133,22 @@ export default function RegisterPage() {
               disabled={loading}
               className="w-full py-2.5 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-all disabled:opacity-50 flex items-center justify-center gap-2 text-sm"
             >
-              {loading ? "Hesap olusturuluyor..." : "Kayit Ol"}
+              {loading ? "Hesap oluşturuluyor..." : "Kayıt Ol"}
               {!loading && <ArrowRight className="w-4 h-4" />}
             </button>
           </form>
 
           <p className="text-center text-sm text-gray-400 mt-6">
-            Zaten hesabiniz var mi?{" "}
+            Zaten hesabınız var mı?{" "}
             <Link href="/login" className="text-gray-900 font-medium hover:underline">
-              Giris Yap
+              Giriş Yap
             </Link>
           </p>
         </div>
 
         <p className="text-center text-xs text-gray-400 mt-4">
           <Link href="/" className="hover:text-gray-600 transition-colors">
-            Ana Sayfaya Don
+            Ana Sayfaya Dön
           </Link>
         </p>
       </div>

@@ -140,7 +140,7 @@ export default function QuizPage() {
 
   const q = questions[currentIndex];
   const t = lang === "tr"
-    ? { title: "Kelime Quiz", subtitle: "Resme bakarak doğru kelimeyi bul", start: "Oyunu Baslat", category: "Kategori Sec", high: "En Yuksek", preparing: "Sorular hazirlaniyor...", of: "/", prepared: "soru hazirlandi", tip: "Ipucu", correct: "Dogru!", wrong: "Yanlis!", answer: "Dogru cevap", over: "Oyun Bitti", final: "Final Skor", again: "Tekrar Oyna", newHigh: "Yeni Rekor!", question: "Soru", wait: "Gorsel yukleniyor...", hint: "Ipucu" }
+    ? { title: "Kelime Quiz", subtitle: "Resme bakarak doğru kelimeyi bul", start: "Oyunu Başlat", category: "Kategori Seç", high: "En Yüksek", preparing: "Sorular hazırlanıyor...", of: "/", prepared: "soru hazırlandı", tip: "İpucu", correct: "Doğru!", wrong: "Yanlış!", answer: "Doğru cevap", over: "Oyun Bitti", final: "Final Skor", again: "Tekrar Oyna", newHigh: "Yeni Rekor!", question: "Soru", wait: "Görsel yükleniyor...", hint: "İpucu" }
     : { title: "Word Quiz", subtitle: "Find the correct word by looking at the image", start: "Start Game", category: "Select Category", high: "High Score", preparing: "Preparing questions...", of: "/", prepared: "questions prepared", tip: "Tip", correct: "Correct!", wrong: "Wrong!", answer: "Correct answer", over: "Game Over", final: "Final Score", again: "Play Again", newHigh: "New High Score!", question: "Question", wait: "Loading image...", hint: "Hint" };
 
   return (

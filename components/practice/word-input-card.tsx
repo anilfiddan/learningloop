@@ -46,7 +46,7 @@ export function WordInputCard({ onStart, isLoading }: WordInputCardProps) {
             type="text"
             value={word}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setWord(e.target.value)}
-            placeholder={lang === "tr" ? "Ornek: merhaba" : "Example: hello"}
+            placeholder={lang === "tr" ? "Örnek: merhaba" : "Example: hello"}
             disabled={isLoading}
             autoComplete="off"
             className={cn(
@@ -71,7 +71,7 @@ export function WordInputCard({ onStart, isLoading }: WordInputCardProps) {
             {isLoading ? (
               <Loader2 className="h-5 w-5 animate-spin" />
             ) : (
-              <span className="text-sm">{lang === "tr" ? "Baslat" : "Start"}</span>
+              <span className="text-sm">{lang === "tr" ? "Başlat" : "Start"}</span>
             )}
           </button>
         </div>
@@ -111,7 +111,7 @@ export function WordInputCard({ onStart, isLoading }: WordInputCardProps) {
 
           {/* Speed */}
           <div className="flex items-center gap-2">
-            <span className="text-gray-500 font-medium">{lang === "tr" ? "Hiz:" : "Speed:"}</span>
+            <span className="text-gray-500 font-medium">{lang === "tr" ? "Hız:" : "Speed:"}</span>
             <div className="flex gap-1">
               <button
                 type="button"
@@ -123,7 +123,7 @@ export function WordInputCard({ onStart, isLoading }: WordInputCardProps) {
                     : "text-gray-600 hover:bg-gray-100 border border-gray-200"
                 )}
               >
-                {lang === "tr" ? "Yavas" : "Slow"}
+                {lang === "tr" ? "Yavaş" : "Slow"}
               </button>
               <button
                 type="button"
@@ -143,7 +143,7 @@ export function WordInputCard({ onStart, isLoading }: WordInputCardProps) {
 
         {/* Sample Words */}
         <div className="flex flex-wrap items-center gap-2 pt-2">
-          <span className="text-sm text-gray-500 font-medium">{lang === "tr" ? "Ornek Kelimeler:" : "Sample Words:"}</span>
+          <span className="text-sm text-gray-500 font-medium">{lang === "tr" ? "Örnek Kelimeler:" : "Sample Words:"}</span>
           {SAMPLE_WORDS.map((item) => (
             <button
               key={item.word}

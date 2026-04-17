@@ -18,7 +18,7 @@ export function Footer() {
           </div>
           <p className="text-xs text-gray-400 max-w-md">
             {lang === "tr"
-              ? "NLP destekli telaffuz asistani. Konusma ve telaffuz gelisimini destekleyen yapay zeka araci. Profesyonel terapinin yerine gecmez."
+              ? "NLP destekli telaffuz asistanı. Konuşma ve telaffuz gelişimini destekleyen yapay zeka aracı. Profesyonel terapinin yerine geçmez."
               : "NLP-powered pronunciation assistant. An AI tool that supports speech and pronunciation development. Does not replace professional therapy."}
           </p>
           <div className="flex items-center gap-4 text-xs text-gray-400">

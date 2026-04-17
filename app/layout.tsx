@@ -13,8 +13,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "LearningLoop - NLP Destekli Telaffuz Asistani",
-  description: "Konusma ve telaffuz zorluklarini yapay zeka ile analiz edin, kisisellestirilmis pratiklerle ilerlemenizi takip edin. Terapistinizin yaninda guclu bir destek araci.",
+  title: "LearningLoop - NLP Destekli Telaffuz Asistanı",
+  description: "Konuşma ve telaffuz zorluklarını yapay zeka ile analiz edin, kişiselleştirilmiş pratiklerle ilerlemenizi takip edin. Terapistinizin yanında güçlü bir destek aracı.",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,

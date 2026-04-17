@@ -9,23 +9,23 @@ export function WhoItsFor() {
   const audiences = lang === "tr" ? [
     {
       icon: Baby,
-      title: "Cocuklar",
-      description: "Konusma gelisim surecinde destek arayan cocuklar icin eglenceli ve motive edici pratik ortami",
+      title: "Çocuklar",
+      description: "Konuşma gelişim sürecinde destek arayan çocuklar için eğlenceli ve motive edici pratik ortamı",
     },
     {
       icon: User,
-      title: "Yetiskinler",
-      description: "Telaffuz zorluklari yasayan veya ikinci dilde netlik kazanmak isteyen yetiskinler",
+      title: "Yetişkinler",
+      description: "Telaffuz zorlukları yaşayan veya ikinci dilde netlik kazanmak isteyen yetişkinler",
     },
     {
       icon: GraduationCap,
-      title: "Terapist Destegi",
-      description: "Dil ve konusma terapistlerinin hastalarına ev odevi olarak onerebilecegi tamamlayici arac",
+      title: "Terapist Desteği",
+      description: "Dil ve konuşma terapistlerinin hastalarına ev ödevi olarak önerebileceği tamamlayıcı araç",
     },
     {
       icon: Users,
       title: "Aileler",
-      description: "Yakinlarinin konusma pratigi surecine destek olmak isteyen aile uyeleri",
+      description: "Yakınlarının konuşma pratiği sürecine destek olmak isteyen aile üyeleri",
     },
   ] : [
     {
@@ -55,11 +55,11 @@ export function WhoItsFor() {
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            {lang === "tr" ? "Kimler Icin?" : "Who Is It For?"}
+            {lang === "tr" ? "Kimler İçin?" : "Who Is It For?"}
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto">
             {lang === "tr"
-              ? "Konusma ve telaffuz gelisimini desteklemek isteyen herkes icin"
+              ? "Konuşma ve telaffuz gelişimini desteklemek isteyen herkes için"
               : "For everyone who wants to support their speech and pronunciation development"
             }
           </p>

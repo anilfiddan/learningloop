@@ -101,8 +101,8 @@ export default function HistoryPage() {
     <div className="p-6">
       {/* Header */}
       <div className="mb-6">
-        <h1 className="text-2xl font-bold text-gray-800 mb-1">Gecmis</h1>
-        <p className="text-gray-500">Ogrenme yolculugunu takip et</p>
+        <h1 className="text-2xl font-bold text-gray-800 mb-1">Geçmiş</h1>
+        <p className="text-gray-500">Öğrenme yolculuğunu takip et</p>
       </div>
 
       {/* Tabs */}
@@ -110,7 +110,7 @@ export default function HistoryPage() {
         {([
           { key: "activity", label: "Aktiviteler" },
           { key: "recent", label: "Son Pratikler" },
-          { key: "learned", label: "Ogrenilenler" },
+          { key: "learned", label: "Öğrenilenler" },
         ] as const).map((tab) => (
           <button
             key={tab.key}
@@ -135,8 +135,8 @@ export default function HistoryPage() {
               <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center mb-4">
                 <ClipboardList className="w-6 h-6 text-gray-400" />
               </div>
-              <p className="text-lg font-bold text-gray-700">Henuz aktivite yok</p>
-              <p className="text-sm text-gray-400 mt-1">Pratik yapmaya basla</p>
+              <p className="text-lg font-bold text-gray-700">Henüz aktivite yok</p>
+              <p className="text-sm text-gray-400 mt-1">Pratik yapmaya başla</p>
             </div>
           ) : (
             <div className="divide-y divide-gray-100">
@@ -184,8 +184,8 @@ export default function HistoryPage() {
               <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center mb-4">
                 <Clock className="w-6 h-6 text-gray-400" />
               </div>
-              <p className="text-lg font-bold text-gray-700">Henuz pratik yok</p>
-              <p className="text-sm text-gray-400 mt-1">Pratik yaptigin kelimeler burada gorunecek</p>
+              <p className="text-lg font-bold text-gray-700">Henüz pratik yok</p>
+              <p className="text-sm text-gray-400 mt-1">Pratik yaptığın kelimeler burada görünecek</p>
             </div>
           ) : (
             <div className="divide-y divide-gray-100">
@@ -240,8 +240,8 @@ export default function HistoryPage() {
               <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center mb-4">
                 <BookCheck className="w-6 h-6 text-gray-400" />
               </div>
-              <p className="text-lg font-bold text-gray-700">Henuz ogrenilen kelime yok</p>
-              <p className="text-sm text-gray-400 mt-1">Kelimeleri ogrenildi olarak isaretleyin</p>
+              <p className="text-lg font-bold text-gray-700">Henüz öğrenilen kelime yok</p>
+              <p className="text-sm text-gray-400 mt-1">Kelimeleri öğrenildi olarak işaretleyin</p>
             </div>
           ) : (
             <div className="divide-y divide-gray-100">
@@ -259,7 +259,7 @@ export default function HistoryPage() {
                       <div className="flex items-center gap-2">
                         <span className="font-bold text-gray-800">{word.text}</span>
                         <span className="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded-lg font-medium">
-                          Ogrenildi
+                          Öğrenildi
                         </span>
                       </div>
                       {word.definition && (
@@ -288,11 +288,11 @@ export default function HistoryPage() {
         </div>
         <div className="bg-gray-50 rounded-xl p-4 border border-gray-100">
           <p className="text-3xl font-bold text-gray-800">{recentWords.length}</p>
-          <p className="text-sm text-gray-500 font-medium">Pratik Yapilan</p>
+          <p className="text-sm text-gray-500 font-medium">Pratik Yapılan</p>
         </div>
         <div className="bg-gray-50 rounded-xl p-4 border border-gray-100">
           <p className="text-3xl font-bold text-gray-800">{learnedWords.length}</p>
-          <p className="text-sm text-gray-500 font-medium">Ogrenilen</p>
+          <p className="text-sm text-gray-500 font-medium">Öğrenilen</p>
         </div>
       </div>
     </div>

@@ -7,10 +7,10 @@ export function PracticePreview() {
   const { lang } = useLanguage();
 
   const benefits = lang === "tr" ? [
-    { text: "Hece bazli detayli telaffuz rehberligi" },
-    { text: "Gercek zamanli ses analizi ve geri bildirim" },
-    { text: "Destekleyici ve motive edici kocluk tonu" },
-    { text: "Kisisellestirilmis zorluk tespiti" },
+    { text: "Hece bazlı detaylı telaffuz rehberliği" },
+    { text: "Gerçek zamanlı ses analizi ve geri bildirim" },
+    { text: "Destekleyici ve motive edici koçluk tonu" },
+    { text: "Kişiselleştirilmiş zorluk tespiti" },
   ] : [
     { text: "Detailed syllable-based pronunciation guidance" },
     { text: "Real-time voice analysis and feedback" },
@@ -25,11 +25,11 @@ export function PracticePreview() {
           {/* Left - Content */}
           <div>
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              {lang === "tr" ? "Akilli Pratik Deneyimi" : "Smart Practice Experience"}
+              {lang === "tr" ? "Akıllı Pratik Deneyimi" : "Smart Practice Experience"}
             </h2>
             <p className="text-gray-500 mb-8 leading-relaxed">
               {lang === "tr"
-                ? "Sadece dinle-tekrarla degil. AI, her telaffuzunuzu analiz ederek tam olarak nerede zorlandiginizi tespit eder ve size ozel pratik stratejisi olusturur."
+                ? "Sadece dinle-tekrarla değil. AI, her telaffuzunuzu analiz ederek tam olarak nerede zorlandığınızı tespit eder ve size özel pratik stratejisi oluşturur."
                 : "Not just listen-and-repeat. AI analyzes each pronunciation attempt, identifies exactly where you struggle, and creates a practice strategy tailored to you."
               }
             </p>
@@ -52,7 +52,7 @@ export function PracticePreview() {
                 <p className="text-xs text-emerald-600 uppercase tracking-wider mb-3 font-medium">
                   {lang === "tr" ? "Pratik Kelimesi" : "Practice Word"}
                 </p>
-                <p className="text-5xl font-bold text-gray-900 mb-6">tesekkurler</p>
+                <p className="text-5xl font-bold text-gray-900 mb-6">teşekkürler</p>
                 <div className="flex justify-center gap-2 flex-wrap">
                   <span className="px-4 py-2 bg-gray-50 rounded-xl text-lg font-medium text-gray-500 border border-gray-200">te</span>
                   <span className="px-4 py-2 bg-gray-50 rounded-xl text-lg font-medium text-gray-500 border border-gray-200">sek</span>
@@ -83,11 +83,11 @@ export function PracticePreview() {
                   <div className="w-2 h-2 rounded-full bg-emerald-500 mt-1.5 flex-shrink-0"></div>
                   <div>
                     <p className="font-semibold text-emerald-700 text-sm mb-1">
-                      {lang === "tr" ? "Guzel ilerleme!" : "Nice progress!"}
+                      {lang === "tr" ? "Güzel ilerleme!" : "Nice progress!"}
                     </p>
                     <p className="text-xs text-gray-500">
                       {lang === "tr"
-                        ? "\"kur\" hecesindeki vurguyu dogru yaptiiniz. \"sek\" hecesinde 's' sesini biraz daha uzatmayi deneyin."
+                        ? "\"kur\" hecesindeki vurguyu doğru yaptınız. \"sek\" hecesinde 's' sesini biraz daha uzatmayı deneyin."
                         : "You got the stress on \"kur\" syllable right. Try extending the 's' sound a bit more in the \"sek\" syllable."
                       }
                     </p>

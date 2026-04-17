@@ -227,7 +227,7 @@ export function SyllablesCard({
           <h3 className="text-sm font-bold text-gray-800">Heceler</h3>
         </div>
         <div className="flex h-16 items-center justify-center">
-          <p className="text-sm text-gray-400">Heceleri gormek icin kelime gir</p>
+          <p className="text-sm text-gray-400">Heceleri görmek için kelime gir</p>
         </div>
       </div>
     );
@@ -325,14 +325,14 @@ export function SyllablesCard({
             className="flex items-center gap-1.5 px-4 py-2 text-sm font-semibold rounded-lg text-gray-600 bg-white border border-gray-200 hover:bg-gray-50 transition-colors"
           >
             <Play className="h-4 w-4" />
-            Heceleri Cal
+            Heceleri Çal
           </button>
           <button
             onClick={playWord}
             className="flex items-center gap-1.5 px-4 py-2 text-sm font-semibold rounded-lg text-white bg-gray-900 hover:bg-gray-800 transition-colors shadow-sm"
           >
             {isPlayingWord ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
-            Kelimeyi Cal
+            Kelimeyi Çal
           </button>
         </div>
       </div>

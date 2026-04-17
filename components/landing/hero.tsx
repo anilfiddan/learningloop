@@ -19,15 +19,15 @@ export function Hero({ onGetStarted, onLogin }: HeroProps) {
           <div>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 rounded-full text-sm font-medium mb-6 border border-emerald-200">
               <BrainCircuit className="w-4 h-4" />
-              {lang === "tr" ? "NLP Destekli Telaffuz Asistani" : "NLP-Powered Pronunciation Assistant"}
+              {lang === "tr" ? "NLP Destekli Telaffuz Asistanı" : "NLP-Powered Pronunciation Assistant"}
             </div>
 
             <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.1] tracking-tight mb-6">
               {lang === "tr" ? (
                 <>
-                  Her Sesi <span className="text-emerald-600">Net</span> Soyle,
+                  Her Sesi <span className="text-emerald-600">Net</span> Söyle,
                   <br />
-                  Her Gun <span className="text-sky-600">Daha Iyi</span>
+                  Her Gün <span className="text-sky-600">Daha İyi</span>
                 </>
               ) : (
                 <>
@@ -40,7 +40,7 @@ export function Hero({ onGetStarted, onLogin }: HeroProps) {
 
             <p className="text-xl text-gray-500 mb-10 leading-relaxed">
               {lang === "tr"
-                ? "Konusma ve telaffuz zorluklarini yapay zeka ile analiz edin, kisisellestirilmis pratiklerle ilerlemenizi takip edin. Terapistinizin yaninda, guclü bir destek araci."
+                ? "Konuşma ve telaffuz zorluklarını yapay zeka ile analiz edin, kişiselleştirilmiş pratiklerle ilerlemenizi takip edin. Terapistinizin yanında, güçlü bir destek aracı."
                 : "Analyze speech and pronunciation challenges with AI, track your progress with personalized practice. A powerful support tool alongside your therapist."}
             </p>
 
@@ -50,23 +50,23 @@ export function Hero({ onGetStarted, onLogin }: HeroProps) {
                 className="px-8 py-4 text-base font-semibold text-white bg-gray-900 rounded-2xl hover:bg-gray-800 transition-all shadow-lg flex items-center justify-center gap-2"
               >
                 <Mic className="w-5 h-5" />
-                {lang === "tr" ? "Hemen Basla" : "Get Started"}
+                {lang === "tr" ? "Hemen Başla" : "Get Started"}
               </button>
               <button
                 onClick={() => document.getElementById("how-it-works")?.scrollIntoView({ behavior: "smooth" })}
                 className="px-8 py-4 text-base font-medium text-gray-600 hover:text-gray-900 transition-colors flex items-center justify-center gap-2 bg-white rounded-2xl border border-gray-200 hover:border-gray-300"
               >
-                {lang === "tr" ? "Nasil Calisir?" : "How it Works?"}
+                {lang === "tr" ? "Nasıl Çalışır?" : "How it Works?"}
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
 
             <div className="flex items-center gap-6 text-sm text-gray-400">
-              <span>{lang === "tr" ? "Ucretsiz baslayın" : "Free to start"}</span>
+              <span>{lang === "tr" ? "Ücretsiz başlayın" : "Free to start"}</span>
               <span className="w-1 h-1 rounded-full bg-gray-300"></span>
-              <span>{lang === "tr" ? "Her yas grubu" : "All ages"}</span>
+              <span>{lang === "tr" ? "Her yaş grubu" : "All ages"}</span>
               <span className="w-1 h-1 rounded-full bg-gray-300"></span>
-              <span>{lang === "tr" ? "Kisisel ilerleme" : "Personal progress"}</span>
+              <span>{lang === "tr" ? "Kişisel ilerleme" : "Personal progress"}</span>
             </div>
           </div>
 
@@ -110,7 +110,7 @@ export function Hero({ onGetStarted, onLogin }: HeroProps) {
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-gray-800">{lang === "tr" ? "Dinle" : "Listen"}</p>
-                      <p className="text-xs text-gray-400">{lang === "tr" ? "Yavas hiz" : "Slow speed"}</p>
+                      <p className="text-xs text-gray-400">{lang === "tr" ? "Yavaş hız" : "Slow speed"}</p>
                     </div>
                   </div>
                   <div className="bg-gray-50 rounded-2xl p-4 flex items-center gap-3 border border-gray-100">
@@ -118,8 +118,8 @@ export function Hero({ onGetStarted, onLogin }: HeroProps) {
                       <Mic className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-gray-800">{lang === "tr" ? "Soyle" : "Speak"}</p>
-                      <p className="text-xs text-gray-400">{lang === "tr" ? "Sira sizde" : "Your turn"}</p>
+                      <p className="text-sm font-semibold text-gray-800">{lang === "tr" ? "Söyle" : "Speak"}</p>
+                      <p className="text-xs text-gray-400">{lang === "tr" ? "Sıra sizde" : "Your turn"}</p>
                     </div>
                   </div>
                 </div>
@@ -133,7 +133,7 @@ export function Hero({ onGetStarted, onLogin }: HeroProps) {
                     </span>
                   </div>
                   <p className="text-xs text-gray-500">
-                    {lang === "tr" ? "Ikinci heceyi biraz daha vurgulayın" : "Try emphasizing the second syllable a bit more"}
+                    {lang === "tr" ? "İkinci heceyi biraz daha vurgulayın" : "Try emphasizing the second syllable a bit more"}
                   </p>
                 </div>
               </div>

@@ -79,12 +79,12 @@ export function DashboardShell({ children }: DashboardShellProps) {
 
   const navItems = [
     { href: "/dashboard", label: t.dashboard.practice, icon: Mic },
-    { href: "/dashboard/daily", label: lang === "tr" ? "Gunluk Pratik" : "Daily Practice", icon: CalendarCheck },
+    { href: "/dashboard/daily", label: lang === "tr" ? "Günlük Pratik" : "Daily Practice", icon: CalendarCheck },
     { href: "/dashboard/quiz", label: lang === "tr" ? "Quiz" : "Quiz", icon: Gamepad2 },
     { href: "/dashboard/packs", label: lang === "tr" ? "Paketler" : "Packs", icon: Package },
     { href: "/dashboard/dictionary", label: t.dashboard.dictionary, icon: BookOpen },
     { href: "/dashboard/lists", label: lang === "tr" ? "Listeler" : "Lists", icon: FolderOpen },
-    { href: "/dashboard/history", label: lang === "tr" ? "Gecmis" : "History", icon: History },
+    { href: "/dashboard/history", label: lang === "tr" ? "Geçmiş" : "History", icon: History },
     { href: "/dashboard/progress", label: t.dashboard.progress, icon: BarChart3 },
     { href: "/dashboard/settings", label: t.dashboard.settings, icon: Settings },
   ];
@@ -101,12 +101,12 @@ export function DashboardShell({ children }: DashboardShellProps) {
 
   const getPageTitle = () => {
     if (pathname === "/dashboard") return lang === "tr" ? "Pratik" : "Practice";
-    if (pathname === "/dashboard/daily") return lang === "tr" ? "Gunluk Pratik" : "Daily Practice";
+    if (pathname === "/dashboard/daily") return lang === "tr" ? "Günlük Pratik" : "Daily Practice";
     if (pathname === "/dashboard/quiz") return "Quiz";
     if (pathname === "/dashboard/packs") return lang === "tr" ? "Paketler" : "Packs";
-    if (pathname === "/dashboard/dictionary") return lang === "tr" ? "Sozluk" : "Dictionary";
+    if (pathname === "/dashboard/dictionary") return lang === "tr" ? "Sözlük" : "Dictionary";
     if (pathname === "/dashboard/lists") return lang === "tr" ? "Listeler" : "Lists";
-    if (pathname === "/dashboard/history") return lang === "tr" ? "Gecmis" : "History";
+    if (pathname === "/dashboard/history") return lang === "tr" ? "Geçmiş" : "History";
     if (pathname === "/dashboard/progress") return lang === "tr" ? "Ilerleme" : "Progress";
     if (pathname === "/dashboard/settings") return lang === "tr" ? "Ayarlar" : "Settings";
     if (pathname?.startsWith("/dashboard/word/")) return lang === "tr" ? "Kelime Detayi" : "Word Detail";
@@ -288,7 +288,7 @@ export function DashboardShell({ children }: DashboardShellProps) {
             className="w-full flex items-center gap-3 px-3 py-2.5 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-900 rounded-lg transition-colors"
           >
             <LogOut className="w-[18px] h-[18px]" />
-            <span>{lang === "tr" ? "Cikis Yap" : "Log out"}</span>
+            <span>{lang === "tr" ? "Çıkış Yap" : "Log out"}</span>
           </button>
         </div>
       </aside>
@@ -332,7 +332,7 @@ export function DashboardShell({ children }: DashboardShellProps) {
               className="hidden lg:flex items-center gap-2 px-3 py-1.5 text-sm text-gray-500 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
             >
               <LogOut className="w-4 h-4" />
-              <span>{lang === "tr" ? "Cikis" : "Log out"}</span>
+              <span>{lang === "tr" ? "Çıkış" : "Log out"}</span>
             </button>
           </div>
         </header>

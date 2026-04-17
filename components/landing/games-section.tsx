@@ -9,32 +9,32 @@ export function GamesSection() {
   const tools = [
     {
       icon: Brain,
-      title: lang === "tr" ? "Akilli Pratik" : "Smart Practice",
+      title: lang === "tr" ? "Akıllı Pratik" : "Smart Practice",
       description: lang === "tr"
-        ? "AI, telaffuzunuzu analiz eder ve zorluk yasadiginiz sesleri tespit eder. Kisisel koçluk ipuclariyla hedefe yonelik calisin."
+        ? "AI, telaffuzunuzu analiz eder ve zorluk yaşadığınız sesleri tespit eder. Kişisel koçluk ipuçlarıyla hedefe yönelik çalışın."
         : "AI analyzes your pronunciation and identifies sounds you struggle with. Work towards goals with personalized coaching tips.",
       features: lang === "tr"
-        ? ["Hece bazli analiz", "Kisisel koçluk", "Anlik geri bildirim", "Tekrar onerileri"]
+        ? ["Hece bazlı analiz", "Kişisel koçluk", "Anlık geri bildirim", "Tekrar önerileri"]
         : ["Syllable-level analysis", "Personal coaching", "Instant feedback", "Repeat suggestions"],
     },
     {
       icon: Package,
       title: lang === "tr" ? "Kelime Paketleri" : "Word Packs",
       description: lang === "tr"
-        ? "Kategorilere gore hazir kelime paketleriyle pratik yapin veya kendi listenizi olusturun."
+        ? "Kategorilere göre hazır kelime paketleriyle pratik yapın veya kendi listenizi oluşturun."
         : "Practice with ready-made word packs by category or create your own custom lists.",
       features: lang === "tr"
-        ? ["Kategorili paketler", "Ozel listeler", "Zorluk seviyeleri", "Sozluk entegrasyonu"]
+        ? ["Kategorili paketler", "Özel listeler", "Zorluk seviyeleri", "Sözlük entegrasyonu"]
         : ["Categorized packs", "Custom lists", "Difficulty levels", "Dictionary integration"],
     },
     {
       icon: Mic,
       title: lang === "tr" ? "Telaffuz Quizi" : "Pronunciation Quiz",
       description: lang === "tr"
-        ? "Ogrendiginiz kelimeleri quiz ile pekistirin. Gorseller ve ses ipuclariyla hafizanizi guclendirin."
+        ? "Öğrendiğiniz kelimeleri quiz ile pekiştirin. Görseller ve ses ipuçlarıyla hafızanızı güçlendirin."
         : "Reinforce learned words with quizzes. Strengthen your memory with visual and audio cues.",
       features: lang === "tr"
-        ? ["AI gorseller", "Sesli ipuclari", "Ilerleme skoru", "Tekrar algoritmasi"]
+        ? ["AI görseller", "Sesli ipuçları", "İlerleme skoru", "Tekrar algoritması"]
         : ["AI visuals", "Audio cues", "Progress score", "Repeat algorithm"],
     },
   ];
@@ -44,11 +44,11 @@ export function GamesSection() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            {lang === "tr" ? "Pratik Araclari" : "Practice Tools"}
+            {lang === "tr" ? "Pratik Araçları" : "Practice Tools"}
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto">
             {lang === "tr"
-              ? "Telaffuz gelisiminizi hizlandirmak icin tasarlanmis araclar"
+              ? "Telaffuz gelişiminizi hızlandırmak için tasarlanmış araçlar"
               : "Tools designed to accelerate your pronunciation improvement"}
           </p>
         </div>
