@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import {
   Search,
@@ -21,6 +21,7 @@ export default function DictionaryPage() {
   const router = useRouter();
   const [words, setWords] = useState<Word[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [debouncedSearch, setDebouncedSearch] = useState("");
   const [filter, setFilter] = useState<"all" | "favorites" | "hard" | "learned">("all");
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [newWord, setNewWord] = useState({ text: "", lang: "tr" as "tr" | "en", level: "beginner" as "beginner" | "intermediate" });
@@ -31,9 +32,14 @@ export default function DictionaryPage() {
     setWords(getWords());
   }, []);
 
-  const filteredWords = words.filter((word) => {
-    const matchesSearch = word.text.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      word.definition?.toLowerCase().includes(searchQuery.toLowerCase());
+  useEffect(() => {
+    const timer = setTimeout(() => setDebouncedSearch(searchQuery), 300);
+    return () => clearTimeout(timer);
+  }, [searchQuery]);
+
+  const filteredWords = useMemo(() => words.filter((word) => {
+    const matchesSearch = word.text.toLowerCase().includes(debouncedSearch.toLowerCase()) ||
+      word.definition?.toLowerCase().includes(debouncedSearch.toLowerCase());
 
     if (!matchesSearch) return false;
 
@@ -43,7 +49,7 @@ export default function DictionaryPage() {
       case "learned": return word.isLearned;
       default: return true;
     }
-  });
+  }), [words, debouncedSearch, filter]);
 
   const handleAddWord = async () => {
     if (!newWord.text.trim() || isAddingWord) return;

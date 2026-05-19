@@ -359,6 +359,312 @@ export interface Database {
           created_at?: string
         }
       }
+      spaced_repetition: {
+        Row: {
+          id: string
+          user_id: string
+          word_id: string
+          ease_factor: number
+          interval_days: number
+          repetitions: number
+          next_review_date: string
+          last_review_date: string
+          is_mastered: boolean
+          total_reviews: number
+          correct_reviews: number
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          word_id: string
+          ease_factor?: number
+          interval_days?: number
+          repetitions?: number
+          next_review_date?: string
+          last_review_date?: string
+          is_mastered?: boolean
+          total_reviews?: number
+          correct_reviews?: number
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          ease_factor?: number
+          interval_days?: number
+          repetitions?: number
+          next_review_date?: string
+          last_review_date?: string
+          is_mastered?: boolean
+          total_reviews?: number
+          correct_reviews?: number
+          updated_at?: string
+        }
+      }
+      quiz_scores: {
+        Row: {
+          id: string
+          user_id: string
+          score: number
+          total_questions: number
+          correct_answers: number
+          category: string | null
+          difficulty: DifficultyLevel
+          duration_seconds: number | null
+          hints_used: number
+          lives_remaining: number
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          score: number
+          total_questions: number
+          correct_answers: number
+          category?: string | null
+          difficulty?: DifficultyLevel
+          duration_seconds?: number | null
+          hints_used?: number
+          lives_remaining?: number
+          created_at?: string
+        }
+        Update: {
+          score?: number
+          total_questions?: number
+          correct_answers?: number
+          category?: string | null
+          difficulty?: DifficultyLevel
+          duration_seconds?: number | null
+          hints_used?: number
+          lives_remaining?: number
+        }
+      }
+      user_settings: {
+        Row: {
+          id: string
+          user_id: string
+          speech_speed: number
+          preferred_level: DifficultyLevel
+          auto_play_audio: boolean
+          show_definitions: boolean
+          theme: 'light' | 'dark' | 'system'
+          compact_mode: boolean
+          daily_reminder: boolean
+          reminder_time: string | null
+          streak_notifications: boolean
+          daily_goal: number
+          preferred_practice_mode: 'standard' | 'quick' | 'intensive'
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          speech_speed?: number
+          preferred_level?: DifficultyLevel
+          auto_play_audio?: boolean
+          show_definitions?: boolean
+          theme?: 'light' | 'dark' | 'system'
+          compact_mode?: boolean
+          daily_reminder?: boolean
+          reminder_time?: string | null
+          streak_notifications?: boolean
+          daily_goal?: number
+          preferred_practice_mode?: 'standard' | 'quick' | 'intensive'
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          speech_speed?: number
+          preferred_level?: DifficultyLevel
+          auto_play_audio?: boolean
+          show_definitions?: boolean
+          theme?: 'light' | 'dark' | 'system'
+          compact_mode?: boolean
+          daily_reminder?: boolean
+          reminder_time?: string | null
+          streak_notifications?: boolean
+          daily_goal?: number
+          preferred_practice_mode?: 'standard' | 'quick' | 'intensive'
+          updated_at?: string
+        }
+      }
+      daily_streaks: {
+        Row: {
+          id: string
+          user_id: string
+          practice_date: string
+          word_count: number
+          attempt_count: number
+          average_accuracy: number
+          practice_duration_seconds: number
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          practice_date: string
+          word_count?: number
+          attempt_count?: number
+          average_accuracy?: number
+          practice_duration_seconds?: number
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          word_count?: number
+          attempt_count?: number
+          average_accuracy?: number
+          practice_duration_seconds?: number
+          updated_at?: string
+        }
+      }
+      notifications: {
+        Row: {
+          id: string
+          user_id: string
+          type: 'streak' | 'achievement' | 'reminder' | 'system' | 'pack_new'
+          title: string
+          body: string | null
+          metadata: Json
+          is_read: boolean
+          read_at: string | null
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          type: 'streak' | 'achievement' | 'reminder' | 'system' | 'pack_new'
+          title: string
+          body?: string | null
+          metadata?: Json
+          is_read?: boolean
+          read_at?: string | null
+          created_at?: string
+        }
+        Update: {
+          is_read?: boolean
+          read_at?: string | null
+        }
+      }
+      achievements: {
+        Row: {
+          id: string
+          slug: string
+          name: string
+          name_en: string
+          description: string
+          description_en: string
+          icon: string
+          category: 'streak' | 'practice' | 'words' | 'quiz' | 'special'
+          requirement_type: 'streak_days' | 'total_practice' | 'total_words' | 'quiz_score' | 'accuracy' | 'custom'
+          requirement_value: number
+          sort_order: number
+          is_active: boolean
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          slug: string
+          name: string
+          name_en: string
+          description: string
+          description_en: string
+          icon?: string
+          category: 'streak' | 'practice' | 'words' | 'quiz' | 'special'
+          requirement_type: 'streak_days' | 'total_practice' | 'total_words' | 'quiz_score' | 'accuracy' | 'custom'
+          requirement_value: number
+          sort_order?: number
+          is_active?: boolean
+          created_at?: string
+        }
+        Update: {
+          name?: string
+          name_en?: string
+          description?: string
+          description_en?: string
+          icon?: string
+          requirement_value?: number
+          sort_order?: number
+          is_active?: boolean
+        }
+      }
+      user_achievements: {
+        Row: {
+          id: string
+          user_id: string
+          achievement_id: string
+          earned_at: string
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          achievement_id: string
+          earned_at?: string
+        }
+        Update: never
+      }
+      feedback: {
+        Row: {
+          id: string
+          user_id: string | null
+          type: 'bug' | 'feature' | 'general' | 'praise'
+          message: string
+          status: 'pending' | 'reviewed' | 'resolved' | 'dismissed'
+          admin_response: string | null
+          responded_by: string | null
+          responded_at: string | null
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          user_id?: string | null
+          type: 'bug' | 'feature' | 'general' | 'praise'
+          message: string
+          status?: 'pending' | 'reviewed' | 'resolved' | 'dismissed'
+          admin_response?: string | null
+          responded_by?: string | null
+          responded_at?: string | null
+          created_at?: string
+        }
+        Update: {
+          status?: 'pending' | 'reviewed' | 'resolved' | 'dismissed'
+          admin_response?: string | null
+          responded_by?: string | null
+          responded_at?: string | null
+        }
+      }
+      api_usage: {
+        Row: {
+          id: string
+          user_id: string
+          api_name: 'tts' | 'stt' | 'image' | 'video' | 'llm'
+          model_id: string | null
+          endpoint: string | null
+          tokens_used: number
+          duration_ms: number
+          cost_estimate: number
+          success: boolean
+          error_message: string | null
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          api_name: 'tts' | 'stt' | 'image' | 'video' | 'llm'
+          model_id?: string | null
+          endpoint?: string | null
+          tokens_used?: number
+          duration_ms?: number
+          cost_estimate?: number
+          success?: boolean
+          error_message?: string | null
+          created_at?: string
+        }
+        Update: never
+      }
     }
     Views: {
       user_stats: {

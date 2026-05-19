@@ -58,7 +58,7 @@ export function VisualCueCard({
       // Complete the progress when done
       setProgress(100);
     }
-  }, [isLoading]);
+  }, [isLoading, t]);
 
   if (isLoading) {
     return (
@@ -123,13 +123,13 @@ export function VisualCueCard({
             </span>
           </div>
           <p className="mt-3 text-base font-bold text-gray-800">{word}</p>
-          <p className="text-xs text-gray-400 mt-1">Görsel oluşturmak için yenile</p>
+          <p className="text-xs text-gray-400 mt-1">{t.visual.refreshHint}</p>
         </div>
       ) : (
         <div className="relative overflow-hidden rounded-xl border border-gray-100">
           <img
             src={visual.imageUrl}
-            alt={`Visual cue for ${word}`}
+            alt={t.visual.altText ? `${t.visual.altText} ${word}` : `${word}`}
             className="h-48 w-full object-contain bg-white"
           />
         </div>

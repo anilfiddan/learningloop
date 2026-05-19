@@ -6,42 +6,53 @@ export function ServiceWorkerRegister() {
   useEffect(() => {
     if (typeof window === "undefined" || !("serviceWorker" in navigator)) return;
 
-    // Register service worker after page load
-    window.addEventListener("load", async () => {
+    let updateInterval: ReturnType<typeof setInterval> | null = null;
+
+    const registerSW = async () => {
       try {
         const registration = await navigator.serviceWorker.register("/sw.js", {
           scope: "/",
         });
 
-        // Check for updates periodically (every 60 minutes)
-        setInterval(() => {
+        updateInterval = setInterval(() => {
           registration.update();
         }, 60 * 60 * 1000);
 
-        // Handle updates
         registration.addEventListener("updatefound", () => {
           const newWorker = registration.installing;
           if (!newWorker) return;
 
           newWorker.addEventListener("statechange", () => {
             if (newWorker.state === "installed" && navigator.serviceWorker.controller) {
-              // New version available — activate it
               newWorker.postMessage("skipWaiting");
             }
           });
         });
       } catch (error) {
-        // Registration failed silently
+        console.warn("[SW] Registration failed:", error);
       }
-    });
+    };
 
-    // Refresh page when new SW takes control
     let refreshing = false;
-    navigator.serviceWorker.addEventListener("controllerchange", () => {
+    const onControllerChange = () => {
       if (refreshing) return;
       refreshing = true;
       window.location.reload();
-    });
+    };
+
+    navigator.serviceWorker.addEventListener("controllerchange", onControllerChange);
+
+    if (document.readyState === "complete") {
+      registerSW();
+    } else {
+      window.addEventListener("load", registerSW, { once: true });
+    }
+
+    return () => {
+      if (updateInterval) clearInterval(updateInterval);
+      navigator.serviceWorker.removeEventListener("controllerchange", onControllerChange);
+      window.removeEventListener("load", registerSW);
+    };
   }, []);
 
   return null;

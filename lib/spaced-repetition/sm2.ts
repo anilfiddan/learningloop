@@ -38,16 +38,23 @@ export function verdictToQuality(verdict: Verdict, matchPct: number): number {
  * Get today's date as YYYY-MM-DD string
  */
 export function todayString(): string {
-  return new Date().toISOString().split("T")[0];
+  const d = new Date();
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
 }
 
 /**
  * Add days to a date string and return YYYY-MM-DD
  */
 function addDays(dateStr: string, days: number): string {
-  const d = new Date(dateStr);
+  const d = new Date(dateStr + "T00:00:00");
   d.setDate(d.getDate() + days);
-  return d.toISOString().split("T")[0];
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
 }
 
 /**

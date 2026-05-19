@@ -44,9 +44,10 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
 
       login(email);
       onClose();
-      window.location.href = "/dashboard";
-    } catch (err: any) {
-      setError(err.message || "Giriş yapılamadı");
+      router.push("/dashboard");
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "Giriş yapılamadı";
+      setError(message);
       setLoading(false);
     }
   };
@@ -61,10 +62,14 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm animate-fade-in"
       onClick={handleBackdropClick}
+      role="dialog"
+      aria-modal="true"
+      aria-label={lang === "tr" ? "Giriş Yap" : "Login"}
     >
       <div className="relative w-full max-w-sm mx-4 bg-white rounded-2xl shadow-xl p-8 animate-slide-up border border-gray-100">
         <button
           onClick={onClose}
+          aria-label={lang === "tr" ? "Kapat" : "Close"}
           className="absolute top-4 right-4 p-1.5 text-gray-400 hover:text-gray-600 rounded-lg hover:bg-gray-50 transition-colors"
         >
           <X className="w-5 h-5" />

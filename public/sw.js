@@ -100,8 +100,27 @@ self.addEventListener("fetch", (event) => {
 
 // ─── STRATEGIES ─────────────────────────────────────────────────────────
 
-async function cacheFirst(request, cacheName, maxAgeSec) {
+async function cacheFirst(request, cacheName, maxAgeSec = 0) {
   const cached = await caches.match(request);
+  if (cached && maxAgeSec > 0) {
+    const dateHeader = cached.headers.get("date");
+    if (dateHeader) {
+      const age = (Date.now() - new Date(dateHeader).getTime()) / 1000;
+      if (age > maxAgeSec) {
+        // Cache expired, fetch fresh
+        try {
+          const response = await fetch(request);
+          if (response.ok) {
+            const cache = await caches.open(cacheName);
+            cache.put(request, response.clone());
+            return response;
+          }
+        } catch {
+          return cached;
+        }
+      }
+    }
+  }
   if (cached) return cached;
 
   try {

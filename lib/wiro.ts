@@ -121,21 +121,9 @@ export function getSttPath(): string {
  * Throws an error with safe message (no secrets exposed)
  */
 export function assertEnv(): void {
-  const baseUrl = getWiroBaseUrl();
-  const apiKey = getWiroApiKey();
-  const apiSecret = getWiroApiSecret();
-
-  if (!baseUrl) {
-    throw new Error("WIRO_BASE_URL environment variable is not set");
-  }
-
-  if (!apiKey) {
-    throw new Error("WIRO_API_KEY environment variable is not set");
-  }
-
-  if (!apiSecret) {
-    throw new Error("WIRO_API_SECRET environment variable is not set");
-  }
+  getWiroBaseUrl();
+  getWiroApiKey();
+  getWiroApiSecret();
 }
 
 /**
@@ -727,15 +715,13 @@ export async function wiroChat(
  * Run STT transcription using Wiro run-command
  */
 export async function wiroTranscribe(audioFile: File, language: string): Promise<WiroRunResult> {
-  const formData = new FormData();
-  formData.append("command", "stt.transcribe");
-  formData.append("model", getSttModelId());
-  formData.append("language", language);
-  formData.append("file", audioFile);
-
   return wiroRunAndWait({
     kind: "multipart",
-    body: {},
-    formData,
+    body: {
+      command: "stt.transcribe",
+      model: getSttModelId(),
+      language,
+      file: audioFile,
+    },
   });
 }

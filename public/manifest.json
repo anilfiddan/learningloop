@@ -1,7 +1,7 @@
 {
   "name": "LearningLoop - Konuşma Pratiği",
   "short_name": "LearningLoop",
-  "description": "Konusma ve telaffuz pratigi asistanı. Tekrar, ses ve görsel destekli ögrenme aracı.",
+  "description": "Konuşma ve telaffuz pratiği asistanı. Tekrar, ses ve görsel destekli öğrenme aracı.",
   "start_url": "/dashboard",
   "display": "standalone",
   "orientation": "portrait",

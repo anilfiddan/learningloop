@@ -7,7 +7,7 @@ import { Loader2 } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/language-context";
 
 interface WordInputCardProps {
-  onStart: (word: string, level: Level) => void;
+  onStart: (word: string, level: Level, speed?: "slow" | "normal") => void;
   isLoading: boolean;
 }
 
@@ -28,7 +28,7 @@ export function WordInputCard({ onStart, isLoading }: WordInputCardProps) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (word.trim()) {
-      onStart(word.trim(), level);
+      onStart(word.trim(), level, speed);
     }
   };
 
@@ -38,6 +38,7 @@ export function WordInputCard({ onStart, isLoading }: WordInputCardProps) {
 
   return (
     <div role="region" aria-label={t.wordInput.label}>
+      <label htmlFor="word-input" className="sr-only">{t.wordInput.label}</label>
       <form onSubmit={handleSubmit} className="space-y-5">
         {/* Main Input Row */}
         <div className="flex gap-3">

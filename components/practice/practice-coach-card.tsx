@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import {
   Mic,
   Square,
@@ -54,6 +54,14 @@ export function PracticeCoachCard({ wordItem, onAttemptSaved, compact = false }:
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const isTurkish = wordItem.lang === "tr";
+
+  useEffect(() => {
+    return () => {
+      if (audioUrl) {
+        URL.revokeObjectURL(audioUrl);
+      }
+    };
+  }, [audioUrl]);
 
   // Start recording
   const startRecording = useCallback(async () => {

@@ -15,9 +15,10 @@ export function base64ToBlob(base64: string, mimeType: string): Blob {
   return new Blob([byteArray], { type: mimeType });
 }
 
-export function createBlobUrl(base64: string, mimeType: string): string {
+export function createBlobUrl(base64: string, mimeType: string): { url: string; revoke: () => void } {
   const blob = base64ToBlob(base64, mimeType);
-  return URL.createObjectURL(blob);
+  const url = URL.createObjectURL(blob);
+  return { url, revoke: () => URL.revokeObjectURL(url) };
 }
 
 export function formatDuration(seconds: number): string {

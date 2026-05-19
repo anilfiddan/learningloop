@@ -82,6 +82,8 @@ export const translations = {
       finalTouches: "Son rötuşlar...",
       ready: "Hazır",
       refresh: "Görseli yenile",
+      refreshHint: "Görsel oluşturmak için yenile",
+      altText: "Görsel ipucu:",
     },
     // Practice Coach
     coach: {
@@ -331,6 +333,8 @@ export const translations = {
       finalTouches: "Final touches...",
       ready: "Ready",
       refresh: "Refresh visual",
+      refreshHint: "Refresh to generate visual",
+      altText: "Visual cue for",
     },
     // Practice Coach
     coach: {

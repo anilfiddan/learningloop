@@ -74,13 +74,17 @@ export function updateWord(id: string, updates: Partial<WordItem>): WordItem | n
   return words[index];
 }
 
-export function deleteWord(id: string): boolean {
+export async function deleteWord(id: string): Promise<boolean> {
   const words = getWords();
   const filtered = words.filter((w) => w.id !== id);
   if (filtered.length === words.length) return false;
   saveWords(filtered);
-  // Clean up SR data for deleted word
-  import("../spaced-repetition/sr-store").then(m => m.deleteSRData(id));
+  try {
+    const { deleteSRData } = await import("../spaced-repetition/sr-store");
+    deleteSRData(id);
+  } catch {
+    // SR cleanup is best-effort
+  }
   return true;
 }
 

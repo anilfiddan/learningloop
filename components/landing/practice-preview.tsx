@@ -1,10 +1,16 @@
 "use client";
 
+import { useMemo } from "react";
 import { useLanguage } from "@/lib/i18n/language-context";
 import { AudioWaveform, Mic } from "lucide-react";
 
 export function PracticePreview() {
   const { lang } = useLanguage();
+
+  const waveformHeights = useMemo(
+    () => Array.from({ length: 40 }, () => Math.random() * 100),
+    []
+  );
 
   const benefits = lang === "tr" ? [
     { text: "Hece bazlı detaylı telaffuz rehberliği" },
@@ -67,11 +73,11 @@ export function PracticePreview() {
                   <AudioWaveform className="w-4 h-4 text-white" />
                 </div>
                 <div className="flex-1 flex items-center gap-0.5 h-6">
-                  {Array.from({ length: 40 }).map((_, i) => (
+                  {waveformHeights.map((h, i) => (
                     <div
                       key={i}
                       className="flex-1 bg-sky-200 rounded-full"
-                      style={{ height: `${Math.random() * 100}%`, minHeight: "3px" }}
+                      style={{ height: `${h}%`, minHeight: "3px" }}
                     ></div>
                   ))}
                 </div>

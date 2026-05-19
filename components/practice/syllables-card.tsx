@@ -35,7 +35,7 @@ export function SyllablesCard({
   hardSyllables,
   onUpdateSyllables,
 }: SyllablesCardProps) {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const [playingIndex, setPlayingIndex] = useState<number | null>(null);
   const [isPlayingWord, setIsPlayingWord] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
@@ -55,7 +55,7 @@ export function SyllablesCard({
       // Fallback to Web Speech API
       if ('speechSynthesis' in window) {
         const utterance = new SpeechSynthesisUtterance(strategy?.syllables[index] || '');
-        utterance.lang = 'tr-TR';
+        utterance.lang = lang === 'tr' ? 'tr-TR' : 'en-US';
         utterance.rate = 0.6;
         speechSynthesis.speak(utterance);
       }
@@ -123,7 +123,7 @@ export function SyllablesCard({
         });
       } else if ('speechSynthesis' in window) {
         const utterance = new SpeechSynthesisUtterance(strategy.syllables[index]);
-        utterance.lang = 'tr-TR';
+        utterance.lang = lang === 'tr' ? 'tr-TR' : 'en-US';
         utterance.rate = 0.6;
         setPlayingIndex(index);
         utterance.onend = () => {
@@ -196,13 +196,13 @@ export function SyllablesCard({
     } else {
       setLoadingProgress(100);
     }
-  }, [isLoading]);
+  }, [isLoading, t]);
 
   if (isLoading) {
     return (
       <div className="bg-white rounded-xl p-5 border border-gray-100">
         <div className="flex items-center justify-between mb-4">
-          <h3 className="text-sm font-bold text-gray-800">Heceler</h3>
+          <h3 className="text-sm font-bold text-gray-800">{t.syllables.title}</h3>
         </div>
         <div className="flex flex-col items-center justify-center py-8">
           <Loader2 className="h-10 w-10 text-gray-400 animate-spin mb-3" />
@@ -224,10 +224,10 @@ export function SyllablesCard({
     return (
       <div className="bg-white rounded-xl p-5 border border-gray-100">
         <div className="flex items-center justify-between mb-4">
-          <h3 className="text-sm font-bold text-gray-800">Heceler</h3>
+          <h3 className="text-sm font-bold text-gray-800">{t.syllables.title}</h3>
         </div>
         <div className="flex h-16 items-center justify-center">
-          <p className="text-sm text-gray-400">Heceleri görmek için kelime gir</p>
+          <p className="text-sm text-gray-400">{t.syllables.enterWord}</p>
         </div>
       </div>
     );
@@ -236,7 +236,7 @@ export function SyllablesCard({
   return (
     <div className="bg-white rounded-xl p-5 border border-gray-100">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-sm font-bold text-gray-800">Heceler</h3>
+        <h3 className="text-sm font-bold text-gray-800">{t.syllables.title}</h3>
         <div className="flex gap-1">
           {!isEditing && (
             <button
@@ -287,23 +287,22 @@ export function SyllablesCard({
               const isHard = hardSyllables.includes(syllable);
 
               return (
-                <button
-                  key={`${syllable}-${index}`}
-                  onClick={() => playSyllable(index, syllableAudio?.audioUrl || '')}
-                  className={cn(
-                    "group relative px-4 py-2 text-base font-bold rounded-xl transition-all",
-                    playingIndex === index
-                      ? "bg-gray-900 text-white shadow-sm"
-                      : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-200",
-                    isHard && "ring-2 ring-amber-400"
-                  )}
-                >
-                  {syllable}
+                <div key={`${syllable}-${index}`} className="group relative">
                   <button
-                    onClick={(e: React.MouseEvent) => {
-                      e.stopPropagation();
-                      onMarkHard(syllable);
-                    }}
+                    onClick={() => playSyllable(index, syllableAudio?.audioUrl || '')}
+                    className={cn(
+                      "px-4 py-2 text-base font-bold rounded-xl transition-all",
+                      playingIndex === index
+                        ? "bg-gray-900 text-white shadow-sm"
+                        : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-200",
+                      isHard && "ring-2 ring-amber-400"
+                    )}
+                  >
+                    {syllable}
+                  </button>
+                  <button
+                    onClick={() => onMarkHard(syllable)}
+                    aria-label={isHard ? `${syllable} zor işaretini kaldır` : `${syllable} zor olarak işaretle`}
                     className={cn(
                       "absolute -top-1 -right-1 p-0.5 rounded-full transition-all",
                       isHard
@@ -313,7 +312,7 @@ export function SyllablesCard({
                   >
                     <Star className="h-2.5 w-2.5" />
                   </button>
-                </button>
+                </div>
               );
             })}
           </div>
@@ -325,14 +324,14 @@ export function SyllablesCard({
             className="flex items-center gap-1.5 px-4 py-2 text-sm font-semibold rounded-lg text-gray-600 bg-white border border-gray-200 hover:bg-gray-50 transition-colors"
           >
             <Play className="h-4 w-4" />
-            Heceleri Çal
+            {t.syllables.playSyllables}
           </button>
           <button
             onClick={playWord}
             className="flex items-center gap-1.5 px-4 py-2 text-sm font-semibold rounded-lg text-white bg-gray-900 hover:bg-gray-800 transition-colors shadow-sm"
           >
             {isPlayingWord ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
-            Kelimeyi Çal
+            {t.syllables.playWord}
           </button>
         </div>
       </div>
